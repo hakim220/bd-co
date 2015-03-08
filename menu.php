@@ -22,8 +22,8 @@
 						<input type="submit" name="valider_recherche" class=""  value=""/>
 					</form>
 					<ul>
-						<li class="border"><a href="#">FR</a></li>
-						<li class="border"><a href="#">EN</a></li>
+						<li class="bouton-bleu"><a href="#">FR</a></li>
+						<li class="bouton-bleu"><a href="#">EN</a></li>
 					</ul>
 					<ul>
 					
@@ -35,12 +35,12 @@
 						-->
 						<?php //} else {?>
 					
-						<li class="border"><a href="index.php?menu=connexion">Connexion</a></li>
-						<li class="border"><a href="index.php?menu=inscription">Inscription</a></li>
+						<li class="bouton-bleu"><a href="index.php?menu=connexion">Connexion</a></li>
+						<li class="bouton-bleu"><a href="index.php?menu=inscription">Inscription</a></li>
 						<?php// } ?>
 					</ul>
 					<!-- il faudra ajouter le ul-li "mon compte/deconnexion" quand l'utilisateur est connecté... -->
 					
-					<a class="border">Panier</a>
+					<a class="bouton-bleu">Panier</a>
 				</div>
 			</div> <!--fin header content-->

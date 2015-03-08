@@ -9,11 +9,11 @@
 	
 	foreach($tous_evenements as $evenements){
 	?>
-		<div id="un_evenement" class="border2">
+		<div id="un_evenement" class="border2 block-border">
 			<span><?php echo $evenements['date']; ?></span>
 			<h2><?php echo $evenements['titre']; ?></h2>
 			<span style="<?php if($evenements['echeance']=="a venir") {echo "color:#009ece;"; } else { echo"color:#D12323;";} ?>"><?php echo $evenements['echeance']; ?></span>
-			<?php echo "<a href='index.php?event={$evenements['id_evenement']}&langue={$langue}' class='border' >Plus d'informations</a>"; ?>				
+			<?php echo "<a href='index.php?event={$evenements['id_evenement']}&langue={$langue}' class='border bouton-rouge' >Plus d'informations</a>"; ?>				
 		</div>
 	<?php
 	}

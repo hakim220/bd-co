@@ -13,6 +13,7 @@
 	le multilingue pour ce qui a �t� fait
 	la date qui apparait au mauvais format
 	faire des class CSS pour alleger le code
+	voir pour l'accessibilité du slider
 
 
 /*=========================

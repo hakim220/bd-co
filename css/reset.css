@@ -111,23 +111,45 @@ rouge : #D12323;
 
 }
 
-/*============
+/*========================
 	class definies
-===============*/
+==========================*/
 
-.border {
-	border-width: 0.5px 0.5px 3px !important;
-	border-color:#005D77 !important;
-	border-style:solid !important;
-}
-
-.border2 {
+.block-border {
+	background-repeat: repeat-y;
+	background-image: url("../img-maquette/oblique-lines3.png");
+	border:2px solid #FFC933;
+	-moz-box-shadow: 3px 2px 3px 0px #828282;
+	-webkit-box-shadow: 3px 2px 3px 0px #828282;
+	-o-box-shadow: 3px 2px 3px 0px #828282;
+	box-shadow: 3px 2px 3px 0px #828282;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#828282, Direction=123, Strength=3);
 	border-width: 2px 2px 4px !important;
 	border-color:#181818 !important;
 	border-style:solid !important;
 }
 
+.bouton-rouge {
+	background: none repeat scroll 0 0 #D12323;
+    color: #fff;
+    border-width: 0.5px 0.5px 3px !important;
+	border-color:#8E1818 !important;
+	border-style:solid !important;
+	font-family: "quattrocento_sansregular";
+	font-weight:bold;
+	text-align: center;
+}
 
+.bouton-bleu {
+	background: none repeat scroll 0 0 #009ece;
+	border-width: 0.5px 0.5px 3px !important;
+	border-color:#005D77 !important;
+	border-style:solid !important;
+	color: #fff;
+	font-family: "quattrocento_sansregular";
+	font-weight:bold;
+	text-align: center;
+}
 
 /*=================================
 			HEADER
@@ -213,7 +235,7 @@ header nav ul li:first-child ul li {
 
 
 header #block_droite {
- display: inline-block;
+ 	display: inline-block;
     float: right;
     font-family: "allerregular";
     font-size: 14px;
@@ -240,8 +262,7 @@ header form[name="search"] input[type="search"] {
 }
 
 header form[name="search"] input[type="submit"] {
- background: url("../img-maquette/picto-search.png") no-repeat scroll 12px 2px #009ece;
-    border: 1px solid #005D77;
+ 	background: url("../img-maquette/picto-search.png") no-repeat scroll 12px 2px #009ece; 
     display: inline-block;
     left: 182px;
     padding-top: 12px;
@@ -250,6 +271,7 @@ header form[name="search"] input[type="submit"] {
     top: -1px;
     width: 55px;
     z-index: 1;
+    border:1px solid #005D77;
 }
 
 header form[name="search"] input[type="submit"]:hover {
@@ -267,13 +289,13 @@ header form[name="search"] + ul {
 
 
 header form[name="search"] + ul li {
-    background: none repeat scroll 0 0 #009ece;
+   
     height: 21px;
     margin-bottom: 6px;
     padding-top: 7px;
     text-align: center;
     width: 30px;
-	color: #fff;
+
 }
 
 
@@ -284,13 +306,13 @@ header form[name="search"] + ul + ul {
 }
 
 header form[name="search"] + ul + ul li {
-	background: none repeat scroll 0 0 #009ece;
+
     height: 21px;
     margin: 5px 0;
     padding-top: 7px;
     text-align: center;
     width:120px;
-	color: #fff;
+
 
 
 }
@@ -303,7 +325,6 @@ header form[name="search"] + ul + ul + a {
     padding-top: 46px;
     text-align: center;
     width: 55px;
-	color: #fff;
 }
 
 header form[name="search"] + ul + ul + a:hover {

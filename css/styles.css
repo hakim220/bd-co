@@ -142,19 +142,12 @@ margin-top: 5px;
 ============================*/
 
 #content_home_page #conteneur-event-news #newsletter {
-	 background-image: url("../img-maquette/oblique-lines3.png");
-    background-position: 421px 5px;
-    background-repeat: repeat-y;
 	
+    background-position: 421px 5px;
+    padding:5px;
 	margin-top:35px;
-	padding:5px;
-	border:2px solid #FFC933;
-	-moz-box-shadow: 3px 2px 3px 0px #828282;
--webkit-box-shadow: 3px 2px 3px 0px #828282;
--o-box-shadow: 3px 2px 3px 0px #828282;
-box-shadow: 3px 2px 3px 0px #828282;
-filter:progid:DXImageTransform.Microsoft.Shadow(color=#828282, Direction=123, Strength=3);
 	}
+	
 
 #content_home_page #conteneur-event-news #newsletter h2 {
 	font-family:"allerregular";
@@ -233,21 +226,10 @@ filter:progid:DXImageTransform.Microsoft.Shadow(color=#828282, Direction=123, St
 }
 
 #content_home_page #selection_bd #conteneur {
- background-image: url("../img-maquette/oblique-lines3.png");
     background-position: 965px 5px;
-    background-repeat: repeat-y;
-    box-shadow: 3px 2px 5px 1px #828282;
     margin-top: 20px;
     padding: 20px;
-	
-	
-	-moz-box-shadow: 3px 2px 3px 0px #828282;
--webkit-box-shadow: 3px 2px 3px 0px #828282;
--o-box-shadow: 3px 2px 3px 0px #828282;
-box-shadow: 3px 2px 3px 0px #828282;
-filter:progid:DXImageTransform.Microsoft.Shadow(color=#828282, Direction=123, Strength=3);
-	
-	}
+}
 
 #content_home_page #selection_bd #conteneur div {
 	width:250px;
@@ -335,17 +317,11 @@ filter:progid:DXImageTransform.Microsoft.Shadow(color=#828282, Direction=123, St
     float: right;
     position: absolute;
     right: 5px;
-	 background: none repeat scroll 0 0 #D12323;
-    color: #fff;
     height: 21px;
     padding-top: 7px;
     text-align: center;
     width: 120px;
-	border-width: 0.5px 0.5px 3px !important;
-	border-color:#8E1818 !important;
-	border-style:solid !important;
-	font-family: "quattrocento_sansregular";
-	font-weight:bold;
+
 }
 
 /*===========================
@@ -452,11 +428,6 @@ filter:progid:DXImageTransform.Microsoft.Shadow(color=#828282, Direction=123, St
     padding-top: 14px;
 	padding-left:10px;
     position: relative;
-	-moz-box-shadow: 3px 2px 3px 0px #828282;
-	-webkit-box-shadow: 3px 2px 3px 0px #828282;
-	-o-box-shadow: 3px 2px 3px 0px #828282;
-	box-shadow: 3px 2px 3px 0px #828282;
-	filter:progid:DXImageTransform.Microsoft.Shadow(color=#828282, Direction=123, Strength=3);
 	position:relative;
 }
 
@@ -467,21 +438,12 @@ filter:progid:DXImageTransform.Microsoft.Shadow(color=#828282, Direction=123, St
 }
 
 #un_evenement a {
-	background: none repeat scroll 0 0 #d12323;
-    border-color: #8e1818 !important;
-    border-style: solid !important;
-    border-width: 0.5px 0.5px 3px !important;
     bottom: 6px;
-    color: #fff;
-    font-family: "quattrocento_sansregular";
-    font-weight: bold;
     height: 21px;
     padding-top: 7px;
     position: absolute;
     right: 10px;
-    text-align: center;
     width: 145px;
-	
 }
 
 #un_evenement h2 {
@@ -515,17 +477,12 @@ filter:progid:DXImageTransform.Microsoft.Shadow(color=#828282, Direction=123, St
 }
 
 #fiche_evenement a {
-	background: none repeat scroll 0 0 #d12323;
-    border-color: #8e1818 !important;
-    border-style: solid !important;
-    border-width: 0.5px 0.5px 3px !important;
-    color: #fff;
+	
     display: block;
-    font-family: "quattrocento_sansregular";
-    font-weight: bold;
+    
     height: 33px;
     padding-top: 2px;
-    text-align: center;
+ 
     width: 129px;
 	float:right;
 }

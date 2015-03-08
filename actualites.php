@@ -25,7 +25,7 @@
 				<span>le <?php echo $actualite['date_publication'] ;  ?></span>
 				<span><?php echo $actualite['categorie_actualite'] ;  ?></span>
 				<p><?php echo substr($actualite['texte'],0,200).'...' ;  ?></p>
-				<?php echo "<a class=\"lire_suite\" href='index.php?actualite={$actualite['id_actualite_seule']}&langue={$langue}' >Lire la suite</a>"; ?>
+				<?php echo "<a class=\"lire_suite bouton-rouge\"  href='index.php?actualite={$actualite['id_actualite_seule']}&langue={$langue}' >Lire la suite</a>"; ?>
 			</div>
 		</div>
 		

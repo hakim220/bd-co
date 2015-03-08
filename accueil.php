@@ -17,7 +17,7 @@
 						<h1>La BD amateur à l'honneur à Paris</h1>
 						<p>Par Jhon Smith, le 12/02/2015 <strong>News</strong></p>    <!--A voir si on mets la date dans une balise html date...?? -->
 						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en...</p>
-						<a  href="#" class="lire_suite border">Lire la suite</a>
+						<a  href="#" class="lire_suite bouton-bleu">Lire la suite</a>
 					</div>
 				</article>
 				<article>
@@ -26,7 +26,7 @@
 						<h1>La BD amateur à l'honneur à Paris</h1>
 						<p>Par Jhon Smith, le 12/02/2015 <strong>News</strong></p>    <!--A voir si on mets la date dans une balise html date...?? -->
 						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en...</p>
-						<a  href="#" class="lire_suite border">Lire la suite</a>
+						<a  href="#" class="lire_suite bouton-bleu">Lire la suite</a>
 					</div>
 				</article>
 			</div> <!-- fin dernière actu -->
@@ -45,38 +45,38 @@
 				</div>
 			</div> <!-- fin evenements -->
 			
-			<div id="newsletter" class="border2">
+			<div id="newsletter" class="border2 block-border">
 				<h2>Inscrivez-vous à la newsletter</h2>
 				<form name="newsletter" method="post">
 					<input type="text" name="prenom" placeholder="Nom" />
 					<input type="text" name="nom" placeholder="Prenom" />
 					<input type="email" name="email" placeholder="E-mail" />
-					<input type="submit" name="envoyer" class="border" value="Inscription" />
+					<input type="submit" name="envoyer" class="bouton-bleu" value="Inscription" />
 				</form>
 			</div> <!-- fin newsletter -->
 			</div>
-			<div id="selection_bd">
+			<div id="selection_bd" >
 				<div class="trait-gauche "></div>
 				<h2>Selection de bande dessinée</h2>
 				<div class="trait-droit "></div>
-				<div id="conteneur" class="border2">
+				<div id="conteneur" class="block-border border2">
 					<div>
 						<img src="img-maquette/bd1.jpg" alt="xx"/>
 						<h3>Thorgal n8</h3>
 						<p>8,50euros</p>
-						<a class="voir_produit border" href="#">Voir le produit</a>
+						<a class="bouton-bleu" href="#">Voir le produit</a>
 					</div>
 					<div>
 						<img src="img-maquette/bd2.jpg" alt="xx"/>
 						<h3>Thorgal n8</h3>
 						<p>8,50euros</p>
-						<a class="voir_produit border" href="#">Voir le produit</a>
+						<a class="bouton-bleu" href="#">Voir le produit</a>
 					</div>
 					<div>
 						<img src="img-maquette/bd3.jpg" alt="xx"/>
 						<h3>Thorgal n8</h3>
 						<p>8,50euros</p>
-						<a class="voir_produit border" href="#">Voir le produit</a>
+						<a class="bouton-bleu" href="#">Voir le produit</a>
 					</div>
 				</div>
 			</div>
