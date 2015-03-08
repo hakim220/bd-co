@@ -4,6 +4,42 @@
 				</div>
 				<nav role="navigation">
 					<ul>
+					<?php
+	
+	// récupération des données pour le menu principal
+	$sql = "SELECT * FROM menu WHERE type = 'principal' ORDER BY index_affichage"; // à voir une modification de la requete pour la langue
+    $connexion_bdd = cree_connexion();
+    $requete_menu_principal = requete($connexion_bdd, $sql);
+    $menu_principal = retourne_tableau($requete_menu_principal);		
+		foreach($menu_principal as $lien){
+
+		echo "<li><a href=index.php?menu=".$lien['lien'].">". $lien['designation']."</a>";
+			 
+		if($lien['lien']=='actualites') {
+			// récupération des données pour le sous-menu de actualites
+			
+			$sql = "SELECT * FROM menu WHERE type = 'sous-menu' ORDER BY index_affichage"; // à voir une modification de la requete pour la langue
+    		$connexion_bdd = cree_connexion();
+   			$requete_sous_menu = requete($connexion_bdd, $sql);
+    		$sous_menu = retourne_tableau($requete_sous_menu);	
+			
+			echo "<ul id=\"sous-menu\">";
+			foreach($sous_menu as $lien_sous_menu) {
+				echo"<li><a href=index.php?menu=".$lien_sous_menu['lien'].">". $lien_sous_menu['designation']."</a></li>";	
+			}
+			echo "</ul>";
+		}
+		
+	
+				
+		echo "</li>";
+	
+		
+		
+		}			
+	?>
+				<!--	
+					<ul>
 						<li><a href="index.php?menu=actualites">Actualités</a>
 							<ul id="sous_menu">
 								<li><a href="index.php?menu=actualites_news">News</a></li>
@@ -15,6 +51,8 @@
 						<li><a href="index.php?menu=evenements">Evenements</a></li>
 						<li><a href="#">Forum</a></li>
 					</ul>
+			-->		
+			</ul>
 				</nav>
 				<div id="block_droite">
 					<form method="post" name="search">

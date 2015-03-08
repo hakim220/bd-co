@@ -27,7 +27,11 @@
 				<span>, publié le <?php echo $actu['date_publication'] ;  ?></span>
 				</p>
 		</div>
-	
+	<ul class="socialcount" data-url="http://www.filamentgroup.com/" data-counts="true">
+  		<li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.filamentgroup.com/" title="Share on Facebook"><span class="count">Like</span></a></li>
+  		<li class="twitter"><a href="https://twitter.com/intent/tweet?text=http://www.filamentgroup.com/" title="Share on Twitter"><span class="count">Tweet</span></a></li>
+  		<li class="googleplus"><a href="https://plus.google.com/share?url=http://www.filamentgroup.com/" title="Share on Google Plus"><span class="count">+1</span></a></li>
+	</ul>
 	<?php
 	}	
 	// recupération de la catégorie de l'article pour proposer des articles complémentaire

@@ -22,6 +22,7 @@
 	  
 	  <script src="js/jquery.js"></script>
 	  <script src="js/bx_slider/jquery.bxslider.min.js"></script>
+	  <script src="js/socialcount/socialcount.js"></script>
 	  <script>
 	  $(document).ready(function(){
 			
