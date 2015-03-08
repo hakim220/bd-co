@@ -26,7 +26,7 @@
 				<span>le <?php echo $interview['date_publication'] ;  ?></span>
 				<span><?php echo $interview['categorie_actualite'] ;  ?></span>
 				<p><?php echo substr($interview['texte'],0,200).'...' ;  ?></p>
-				<?php echo "<a class=\"lire_suite\" href='index.php?actualite={$interview['id_actualite_seule']}&langue={$langue}' >Lire la suite</a>"; ?>
+				<?php echo "<a class=\"lire_suite bouton-rouge\" href='index.php?actualite={$interview['id_actualite_seule']}&langue={$langue}' >Lire la suite</a>"; ?>
 			
 			</div>
 		</div>

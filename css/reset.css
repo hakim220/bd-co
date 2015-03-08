@@ -2,7 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -96,8 +95,6 @@ rouge : #D12323;
 
 }
 
-
-
 @font-face {
     font-family: 'quattrocento_sansregular';
     src: url('../fonts/quattrocento_regular/QuattrocentoSans-Regular-webfont.eot');
@@ -114,19 +111,34 @@ rouge : #D12323;
 /*========================
 	class definies
 ==========================*/
+.couleur-blanche {
+	color:#fff;
+}
+
+.couleur-bleu {
+	color:#009ece;
+}
+
+.couleur-rouge {
+	color:#D12323;
+}
+
+.couleur-jaune {
+	color:#ffc933;
+}
 
 .block-border {
-	background-repeat: repeat-y;
-	background-image: url("../img-maquette/oblique-lines3.png");
-	border:2px solid #FFC933;
-	-moz-box-shadow: 3px 2px 3px 0px #828282;
-	-webkit-box-shadow: 3px 2px 3px 0px #828282;
-	-o-box-shadow: 3px 2px 3px 0px #828282;
-	box-shadow: 3px 2px 3px 0px #828282;
-	filter:progid:DXImageTransform.Microsoft.Shadow(color=#828282, Direction=123, Strength=3);
-	border-width: 2px 2px 4px !important;
-	border-color:#181818 !important;
-	border-style:solid !important;
+	/*background-repeat: repeat-y;
+	background-image: url("../img-maquette/oblique-lines3.png");*/
+	-moz-box-shadow: 3px 3px 3px 0px #B2B2B2;
+	-webkit-box-shadow: 3px 3px 3px 0px #B2B2B2;
+	-o-box-shadow: 3px 3px 3px 0px #B2B2B2;
+	box-shadow: 3px 3px 3px 0px #B2B2B2;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#B2B2B2, Direction=135, Strength=3);
+	border-radius: 0 0.25rem;
+    border-style: solid;
+    border-width: 1px 0.25rem 0.25rem 1px;
+    border-color: #282828;
 }
 
 .bouton-rouge {
@@ -150,12 +162,12 @@ rouge : #D12323;
 	font-weight:bold;
 	text-align: center;
 }
-
 /*=================================
 			HEADER
 ==================================*/
 body {
 	background:#DCDCDC;  /*#F2F2F2*/
+	color:#282828;
 }
 
 #wrapper {
@@ -232,8 +244,6 @@ header nav ul li:first-child ul li {
 	padding: 2px 2px;
 }
 
-
-
 header #block_droite {
  	display: inline-block;
     float: right;
@@ -252,7 +262,6 @@ header form[name="search"] {
 	position: relative;
     height: 30px;
 }
-
 
 header form[name="search"] input[type="search"] {
 	height: 24px;
@@ -289,15 +298,12 @@ header form[name="search"] + ul {
 
 
 header form[name="search"] + ul li {
-   
     height: 21px;
     margin-bottom: 6px;
     padding-top: 7px;
     text-align: center;
     width: 30px;
-
 }
-
 
 header form[name="search"] + ul + ul {
 	display:inline-block;
@@ -306,15 +312,11 @@ header form[name="search"] + ul + ul {
 }
 
 header form[name="search"] + ul + ul li {
-
     height: 21px;
     margin: 5px 0;
     padding-top: 7px;
     text-align: center;
     width:120px;
-
-
-
 }
 
 header form[name="search"] + ul + ul + a {
@@ -331,15 +333,13 @@ header form[name="search"] + ul + ul + a:hover {
 	cursor: pointer;
 }
 
-
 /*==============================
 	Footer
 ================================*/
 
 footer {
 	height:130px;
-	background:url("../img-maquette/pattern2.png");
-	/*margin-top:20px;*/
+	background:url("../img-maquette/pattern2.png"); /*margin-top:20px;*/
 }
 
 footer #footer-content {
@@ -350,7 +350,6 @@ footer #footer-content {
 footer #footer-content ul:first-child {
 	float:left;
 }
-
 
 footer #footer-content ul:first-child li {
 	font-family:'allerlight';

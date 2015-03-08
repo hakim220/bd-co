@@ -1,7 +1,6 @@
 /*=====================
 	SLIDER
 ======================*/
-
 #content_home_page #slider {
 	clear:both;
 	margin-top:10px;
@@ -10,7 +9,6 @@
 /*=======================
 	derniere_actu	
 =======================*/
-
 #content_home_page #derniere_actu {
 	width:500px;
 	float:left;
@@ -26,7 +24,6 @@
 	padding:6px 0px 13px 50px;
     vertical-align: top;
 }
-
 
 #content_home_page #derniere_actu .trait-droit {
 	width:120px;
@@ -57,13 +54,9 @@ font-family:'allerlight';
 	 margin-top: 3px;
 }
 
-#content_home_page #derniere_actu article div h1 + p strong {
-	color:#D12323;
-}
-
 #content_home_page #derniere_actu article div h1 + p + p {
-font-family: 'quattrocento_sansregular';
-margin-top: 5px;
+	font-family: 'quattrocento_sansregular';
+	margin-top: 5px;
 }
 
 #content_home_page #derniere_actu article img {
@@ -82,7 +75,6 @@ margin-top: 5px;
 	font-family: 'quattrocento_sansregular';
 	font-weight:bold;
 	font-size: 14px;
-	color: #fff;
 }
 
 /*=======================
@@ -94,7 +86,7 @@ margin-top: 5px;
 }
 
 #content_home_page #conteneur-event-news  #evenement h2 {
-  background: url("../img-maquette/event-picto.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);font-family: "allerregular";
+  	background: url("../img-maquette/event-picto.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);font-family: "allerregular";
     font-size: 22px;
     font-weight: bold;
     padding: 6px 0 13px 50px;
@@ -102,9 +94,8 @@ margin-top: 5px;
 	display:inline-block;
 }
 
-
 #content_home_page #conteneur-event-news  #evenement .trait-droit {
-	 background: none repeat scroll 0 0 #15a6d2;
+	background: none repeat scroll 0 0 #15a6d2;
     display: inline-block;
     height: 8px;
     margin-bottom: 16px;
@@ -120,7 +111,6 @@ margin-top: 5px;
 	padding:10px;
 	font-family:"allerregular";
 	font-weight:bold;
-	color:#fff;
 	margin-right: 5px;
 }
 
@@ -131,24 +121,20 @@ margin-top: 5px;
 }
 
 #content_home_page #conteneur-event-news  #evenement .un_event h3 {
-	 font-family: "quattrocento_sansregular";
+	font-family: "quattrocento_sansregular";
     font-weight: normal;
     margin-top: 20px;
-	
 }
 
 /*============================
 		Newsletter
 ============================*/
-
 #content_home_page #conteneur-event-news #newsletter {
-	
     background-position: 421px 5px;
     padding:5px;
 	margin-top:35px;
-	}
+}
 	
-
 #content_home_page #conteneur-event-news #newsletter h2 {
 	font-family:"allerregular";
 	font-weight:bold;
@@ -175,11 +161,6 @@ margin-top: 5px;
 }
 
 #content_home_page #conteneur-event-news #newsletter input[type="submit"] {
-	background: none repeat scroll 0 0 #009ece;
-    border: medium none;
-    color: #fff;
-    font-family: "quattrocento_sansregular";
-    font-weight: bold;
     height: 31px;
     position: absolute;
     right: 9px;
@@ -192,7 +173,6 @@ margin-top: 5px;
 /*==============================
 	Selection BD
 ================================*/
-
 #content_home_page #selection_bd {
 	clear:both;
 	margin-top:50px;
@@ -201,7 +181,7 @@ margin-top: 5px;
 #content_home_page #selection_bd .trait-gauche {
 	width:274px;
 	height:8px;
-	background:#181818;
+	background:#282828;
 	display:inline-block;
 	vertical-align:bottom;
 	margin-bottom:5px;
@@ -210,7 +190,7 @@ margin-top: 5px;
 #content_home_page #selection_bd .trait-droit {
 	width:274px;
 	height:8px;
-	background:#181818;
+	background:#282828;
 	display:inline-block;
 	vertical-align:bottom;
 	margin-bottom:5px;
@@ -257,18 +237,13 @@ margin-top: 5px;
 }
 
 #content_home_page #selection_bd #conteneur div a {
-	background: none repeat scroll 0 0 #009ece;
     height: 31px;
     text-align: center;
     width: 85px;
-	font-family: "quattrocento_sansregular";
-    font-weight: bold;
 	padding:3px 5px;
 	margin-top:5px;
-	color: #fff;
+	font-size: 15px;
 }
-
-
 
 /*===========================
 	PAGE ACTUALITES
@@ -309,19 +284,17 @@ margin-top: 5px;
 
 .une_actualite .content_actualite h2 + span + span + span {
 	font-weight:bold;
-	color:#D12323;
 }
 
 .une_actualite .content_actualite .lire_suite {
-	bottom: 10px;
+	bottom: 4px;
     float: right;
     position: absolute;
-    right: 5px;
+    right: 1px;
     height: 21px;
     padding-top: 7px;
     text-align: center;
     width: 120px;
-
 }
 
 /*===========================
@@ -355,7 +328,6 @@ margin-top: 5px;
 
 .actualite_seule h2 + img + br + span + p + p {
 	font-family:"allerlight";
-	font-weight:bold;
 	font-size:13px;
 }
 
@@ -408,15 +380,12 @@ margin-top: 5px;
     margin: 5px 0;
 }
 
-
 #content_redacteur a {
 	font-family: "allerlight";
     font-size: 13px;
     margin: 5px 0;
     text-decoration: underline;
 }
-
-
 
 /*===========================
 	PAGE EVENEMENTS
@@ -477,12 +446,9 @@ margin-top: 5px;
 }
 
 #fiche_evenement a {
-	
     display: block;
-    
     height: 33px;
     padding-top: 2px;
- 
     width: 129px;
 	float:right;
 }

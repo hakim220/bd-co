@@ -22,7 +22,7 @@
 				<span><?php echo $actu['legende_photo'] ;?></span>
 				<p><?php echo $actu['texte'];  ?></p>
 				
-				<p>
+				<p class="couleur-bleu">
 				<span> <?php echo "<a href='index.php?redacteur={$actu['id_redacteur_actualite']}&langue={$langue}'>" ?><?php echo 'par '. $actu['nom'] .' '. $actu['prenom'] ; ?></a></span>
 				<span>, publié le <?php echo $actu['date_publication'] ;  ?></span>
 				</p>
@@ -47,7 +47,7 @@
 	//var_dump( $articles_complementaire);
   
 	// on affiche trois article complémentaires (limit 0,3)
-		echo "<p class=\"actu_complementaire\">Articles qui pourraient vous interesser :</p>";
+		echo "<p class=\"actu_complementaire couleur-rouge\">Articles qui pourraient vous interesser :</p>";
 		foreach($articles_complementaire as $article){
 			
 			 echo "<a href='index.php?actualite={$article['id_actualite_seule']}&langue={$langue}' >$article[titre]</a> <br/>"; 		

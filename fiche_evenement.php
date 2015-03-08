@@ -13,7 +13,7 @@
 		<div id="fiche_evenement">
 			<h2><?php echo $evenements['titre']; ?></h2>
 			<img src="<?php echo $evenements['image']; ?>" alt="<?php echo $evenements['alt_image']; ?>"/>
-			<span><?php echo $evenements['date']; ?></span>
+			<span class="couleur-bleu"><?php echo $evenements['date']; ?></span>
 			<p><?php echo $evenements['texte']; ?></p>
 			<?php echo "<a href='index.php?menu=evenements&langue={$langue}' class='border2 bouton-rouge' >Retour aux évenements</a>"; ?>
 				

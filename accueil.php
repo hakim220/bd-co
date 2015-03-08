@@ -17,16 +17,16 @@
 						<h1>La BD amateur à l'honneur à Paris</h1>
 						<p>Par Jhon Smith, le 12/02/2015 <strong>News</strong></p>    <!--A voir si on mets la date dans une balise html date...?? -->
 						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en...</p>
-						<a  href="#" class="lire_suite bouton-bleu">Lire la suite</a>
+						<a  href="#" class="lire_suite bouton-bleu couleur-blanche">Lire la suite</a>
 					</div>
 				</article>
 				<article>
 					<img src="img-maquette/pop-art.jpg" alt="xx"/>
 					<div>
 						<h1>La BD amateur à l'honneur à Paris</h1>
-						<p>Par Jhon Smith, le 12/02/2015 <strong>News</strong></p>    <!--A voir si on mets la date dans une balise html date...?? -->
+						<p>Par Jhon Smith, le 12/02/2015 <strong class="couleur-rouge">News</strong></p>    <!--A voir si on mets la date dans une balise html date...?? -->
 						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en...</p>
-						<a  href="#" class="lire_suite bouton-bleu">Lire la suite</a>
+						<a  href="#" class="lire_suite bouton-bleu couleur-blanche">Lire la suite</a>
 					</div>
 				</article>
 			</div> <!-- fin dernière actu -->
@@ -36,11 +36,11 @@
 					<h2>Prochains evenements</h2>
 					<div class="trait-droit "></div>
 				<div class="un_event">
-					<p><span class="jour_event">12</span> Janvier 2015</p>  <!-- à voir si on mets pas la balise date html -->
+					<p><span class="jour_event couleur-blanche">12</span> Janvier 2015</p>  <!-- à voir si on mets pas la balise date html -->
 					<h3>Lancement d’un nouvelle collection de BD !</h3>
 				</div>
 				<div class="un_event">
-					<p><span class="jour_event">12</span> Janvier 2015</p>  <!-- à voir si on mets pas la balise date html -->
+					<p><span class="jour_event couleur-blanche">12</span> Janvier 2015</p>  <!-- à voir si on mets pas la balise date html -->
 					<h3>Lancement d’un nouvelle collection de BD !</h3>
 				</div>
 			</div> <!-- fin evenements -->
