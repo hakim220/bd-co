@@ -1,0 +1,288 @@
+/*=====================
+	SLIDER
+======================*/
+
+#content_home_page #slider {
+	clear:both;
+	margin-top:10px;
+}
+
+/*=======================
+	derniere_actu	
+=======================*/
+
+#content_home_page #derniere_actu {
+	width:500px;
+	float:left;
+	margin-bottom: 50px;
+}
+
+#content_home_page #derniere_actu h2 {
+	background: url("../img-maquette/actu-picto.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: inline-block;
+    font-family: "allerregular";
+    font-size: 22px;
+    font-weight: bold;
+	padding:6px 0px 13px 50px;
+    vertical-align: top;
+}
+
+
+#content_home_page #derniere_actu .trait-droit {
+	width:120px;
+	height:8px;
+	background:#15A6D2;
+	display:inline-block;
+	vertical-align:bottom;
+	margin-bottom:16px;
+	width: 198px;
+}
+
+#content_home_page #derniere_actu article {
+	margin-top:20px;
+	clear:both;
+	position:relative;
+	 height: 125px;
+}
+
+#content_home_page #derniere_actu article div h1 {
+	font-family:'allerlight';
+	font-weight:bold;
+}
+
+#content_home_page #derniere_actu article div h1+p {
+font-family:'allerlight';
+	font-weight:bold;
+	font-style:italic;
+	 margin-top: 3px;
+}
+
+#content_home_page #derniere_actu article div h1 + p strong {
+	color:#D12323;
+}
+
+#content_home_page #derniere_actu article div h1 + p + p {
+font-family: 'quattrocento_sansregular';
+margin-top: 5px;
+}
+
+#content_home_page #derniere_actu article img {
+	width:170px;
+	height:120px;
+	float:left;
+	margin-right: 10px;
+}
+
+#content_home_page #derniere_actu article .lire_suite {
+	position:absolute;
+	bottom:7px;
+	right:5px;
+	background:#009ece;
+	padding:5px 8px;
+	font-family: 'quattrocento_sansregular';
+	font-weight:bold;
+	font-size: 14px;
+	color: #fff;
+}
+
+/*=======================
+	EVENEMENTS
+=======================*/
+#content_home_page #conteneur-event-news {
+	float:right;
+	width:430px;
+}
+
+#content_home_page #conteneur-event-news  #evenement h2 {
+  background: url("../img-maquette/event-picto.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);font-family: "allerregular";
+    font-size: 22px;
+    font-weight: bold;
+    padding: 6px 0 13px 50px;
+    vertical-align: top;
+	display:inline-block;
+}
+
+
+#content_home_page #conteneur-event-news  #evenement .trait-droit {
+	 background: none repeat scroll 0 0 #15a6d2;
+    display: inline-block;
+    height: 8px;
+    margin-bottom: 16px;
+    vertical-align: bottom;
+    width: 142px;
+}
+
+#content_home_page #conteneur-event-news  #evenement div p .jour_event {
+	background:#15A6D2;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	padding:10px;
+	font-family:"allerregular";
+	font-weight:bold;
+	color:#fff;
+	margin-right: 5px;
+}
+
+#content_home_page #conteneur-event-news  #evenement .un_event {
+	margin-top:20px;
+	font-family:"allerregular";
+	font-weight:bold;
+}
+
+#content_home_page #conteneur-event-news  #evenement .un_event h3 {
+	 font-family: "quattrocento_sansregular";
+    font-weight: normal;
+    margin-top: 20px;
+	
+}
+
+/*============================
+		Newsletter
+============================*/
+
+#content_home_page #conteneur-event-news #newsletter {
+	 background-image: url("../img-maquette/oblique-lines3.png");
+    background-position: 421px 5px;
+    background-repeat: repeat-y;
+	
+	margin-top:35px;
+	padding:5px;
+	border:2px solid #FFC933;
+	-moz-box-shadow: 3px 2px 3px 0px #828282;
+-webkit-box-shadow: 3px 2px 3px 0px #828282;
+-o-box-shadow: 3px 2px 3px 0px #828282;
+box-shadow: 3px 2px 3px 0px #828282;
+filter:progid:DXImageTransform.Microsoft.Shadow(color=#828282, Direction=123, Strength=3);
+	}
+
+#content_home_page #conteneur-event-news #newsletter h2 {
+	font-family:"allerregular";
+	font-weight:bold;
+	text-align:center;
+	font-size: 16px;
+}
+
+#content_home_page #conteneur-event-news #newsletter input[type="text"] {
+	border:2px solid #4c4c4c;
+	width:196px;
+	height:25px;
+	margin-top:5px;
+}
+
+#content_home_page #conteneur-event-news #newsletter input[type="email"] {
+	border:2px solid #4c4c4c;
+	width:292px;
+	height:25px;
+	margin-top:5px;
+}
+
+#content_home_page #conteneur-event-news #newsletter form {
+	position:relative;
+}
+
+#content_home_page #conteneur-event-news #newsletter input[type="submit"] {
+	background: none repeat scroll 0 0 #009ece;
+    border: medium none;
+    color: #fff;
+    font-family: "quattrocento_sansregular";
+    font-weight: bold;
+    height: 31px;
+    position: absolute;
+    right: 9px;
+    text-align: center;
+    top: 41px;
+    width: 105px;
+	font-size: 14px;
+}
+
+/*==============================
+	Selection BD
+================================*/
+
+#content_home_page #selection_bd {
+	clear:both;
+	margin-top:50px;
+}
+	
+#content_home_page #selection_bd .trait-gauche {
+	width:274px;
+	height:8px;
+	background:#181818;
+	display:inline-block;
+	vertical-align:bottom;
+	margin-bottom:5px;
+}
+
+#content_home_page #selection_bd .trait-droit {
+	width:274px;
+	height:8px;
+	background:#181818;
+	display:inline-block;
+	vertical-align:bottom;
+	margin-bottom:5px;
+}
+
+#content_home_page #selection_bd h2 {
+	display:inline-block;
+	vertical-align:top; 
+	font-family: "allerregular";
+    font-size: 30px;
+    font-weight: bold;
+	 margin: 0 7px;
+}
+
+#content_home_page #selection_bd #conteneur {
+ background-image: url("../img-maquette/oblique-lines3.png");
+    background-position: 965px 5px;
+    background-repeat: repeat-y;
+    box-shadow: 3px 2px 5px 1px #828282;
+    margin-top: 20px;
+    padding: 20px;
+	
+	
+	-moz-box-shadow: 3px 2px 3px 0px #828282;
+-webkit-box-shadow: 3px 2px 3px 0px #828282;
+-o-box-shadow: 3px 2px 3px 0px #828282;
+box-shadow: 3px 2px 3px 0px #828282;
+filter:progid:DXImageTransform.Microsoft.Shadow(color=#828282, Direction=123, Strength=3);
+	
+	}
+
+#content_home_page #selection_bd #conteneur div {
+	width:250px;
+	display:table-cell;
+	 width: 330px;
+	 text-align:center;
+}
+
+#content_home_page #selection_bd #conteneur div img {
+	width:165px;
+	height:205px;
+}
+
+#content_home_page #selection_bd #conteneur div h3{
+	font-family: "allerregular";
+    font-size:18px;
+    font-weight: bold;
+	margin:5px 0px;
+}
+
+#content_home_page #selection_bd #conteneur div p {
+	font-family:'allerlight';
+	font-size:14px;
+	margin:10px 0px;
+}
+
+#content_home_page #selection_bd #conteneur div a {
+	background: none repeat scroll 0 0 #009ece;
+    height: 31px;
+    text-align: center;
+    width: 85px;
+	font-family: "quattrocento_sansregular";
+    font-weight: bold;
+	padding:3px 5px;
+	margin-top:5px;
+	color: #fff;
+}
+

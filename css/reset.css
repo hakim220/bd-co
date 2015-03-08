@@ -1,0 +1,371 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a{
+	color: inherit;
+	text-decoration:none;
+}
+
+/*
+Projet : Bd&cod
+Auteur : Hakim SOUSSI
+Version : v 1.0
+Description : site pour un projet tutoré
+Date : 2015
+*/
+
+/*
+bleu : #009ece;
+jaune : #ffc933;
+rouge : #D12323;
+*/
+
+/*==============================
+			LES FONTS
+==============================*/
+
+@font-face {
+    font-family: 'allerregular';
+    src: url('../fonts/aller_regular/Aller_Std_Rg-webfont.eot');
+    src: url('../fonts/aller_regular/Aller_Std_Rg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/aller_regular/Aller_Std_Rg-webfont.woff2') format('woff2'),
+         url('../fonts/aller_regular/Aller_Std_Rg-webfont.woff') format('woff'),
+         url('../fonts/aller_regular/Aller_Std_Rg-webfont.ttf') format('truetype'),
+         url('../fonts/aller_regular/Aller_Std_Rg-webfont.svg#allerregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'allerlight';
+    src: url('../fonts/aller_light/Aller_Std_Lt-webfont.eot');
+    src: url('../fonts/aller_light/Aller_Std_Lt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/aller_light/Aller_Std_Lt-webfont.woff2') format('woff2'),
+         url('../fonts/aller_light/Aller_Std_Lt-webfont.woff') format('woff'),
+         url('../fonts/aller_light/Aller_Std_Lt-webfont.ttf') format('truetype'),
+         url('../fonts/aller_light/Aller_Std_Lt-webfont.svg#allerlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+@font-face {
+    font-family: 'quattrocento_sansregular';
+    src: url('../fonts/quattrocento_regular/QuattrocentoSans-Regular-webfont.eot');
+    src: url('../fonts/quattrocento_regular/QuattrocentoSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/quattrocento_regular/QuattrocentoSans-Regular-webfont.woff2') format('woff2'),
+         url('../fonts/quattrocento_regular/QuattrocentoSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/quattrocento_regular/QuattrocentoSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/quattrocento_regular/QuattrocentoSans-Regular-webfont.svg#quattrocento_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*============
+	class definies
+===============*/
+
+.border {
+	border-width: 0.5px 0.5px 3px !important;
+	border-color:#005D77 !important;
+	border-style:solid !important;
+}
+
+.border2 {
+	border-width: 2px 2px 4px !important;
+	border-color:#181818 !important;
+	border-style:solid !important;
+}
+
+
+
+/*=================================
+			HEADER
+==================================*/
+body {
+	background:#DCDCDC;  /*#F2F2F2*/
+}
+
+#wrapper {
+	width:974px;
+	margin:0px auto;
+	background:/*#F9F9F9*/  #fff;
+	padding:  20px 25px 20px 25px;
+	min-height: 650px;
+}
+
+header {
+	width:100%;
+	background:url("../img-maquette/pattern2.png");
+	min-width:1024px;
+	height:140px;
+}
+
+header #header-content {
+	width:1024px;
+	margin:0px auto;
+	min-width:1024px;
+}
+
+header #logo {
+	 display: inline-block;
+    margin-top: 10px;
+    vertical-align: top;
+    width: 130px;
+}
+
+header nav {
+	width:400px;
+	display:inline-block;
+	vertical-align:top;
+	margin-top:100px;
+	margin-left: 30px;
+}
+
+header nav ul {
+	position:absolute;
+}
+
+header nav ul li {
+	float:left;
+	margin:0px 10px;
+}
+
+header nav ul li a {
+	font-family:'allerregular';
+	font-weight:bold;
+	font-size:16px;
+	color: #fff;
+}
+
+header nav ul li:first-child:hover ul {
+	display:block;
+}
+
+header nav ul li:first-child ul {
+	position:absolute;
+	top:17px;
+	width:130px;
+	height:85px;
+	display:none;
+	background-color:#D12323;
+	z-index:2;
+	border-color: #8e1818 !important;
+    border-style: solid !important;
+    border-width: 0.5px 0.5px 3px !important;
+}
+
+header nav ul li:first-child ul li {
+	margin:5px 0px;
+	padding: 2px 2px;
+}
+
+
+
+header #block_droite {
+ display: inline-block;
+    float: right;
+    font-family: "allerregular";
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 14px;
+    vertical-align: top;
+    width: 240px;
+}
+
+header form[name="search"] {
+	 border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+    width: 237px;
+	position: relative;
+    height: 30px;
+}
+
+
+header form[name="search"] input[type="search"] {
+	height: 24px;
+    position: absolute;
+    width: 176px;
+    z-index: 2;
+}
+
+header form[name="search"] input[type="submit"] {
+ background: url("../img-maquette/picto-search.png") no-repeat scroll 12px 2px #009ece;
+    border: 1px solid #005D77;
+    display: inline-block;
+    left: 182px;
+    padding-top: 12px;
+    position: absolute;
+    text-align: center;
+    top: -1px;
+    width: 55px;
+    z-index: 1;
+}
+
+header form[name="search"] input[type="submit"]:hover {
+	cursor:pointer;
+}
+
+header form[name="search"] + ul {
+	border-right: 1px solid #fff;
+    display: inline-block;
+    height: 69px;
+    margin-top: 5px;
+    vertical-align: top;
+    width: 40px;
+}
+
+
+header form[name="search"] + ul li {
+    background: none repeat scroll 0 0 #009ece;
+    height: 21px;
+    margin-bottom: 6px;
+    padding-top: 7px;
+    text-align: center;
+    width: 30px;
+	color: #fff;
+}
+
+
+header form[name="search"] + ul + ul {
+	display:inline-block;
+	vertical-align:top;
+	 margin-left: 5px;
+}
+
+header form[name="search"] + ul + ul li {
+	background: none repeat scroll 0 0 #009ece;
+    height: 21px;
+    margin: 5px 0;
+    padding-top: 7px;
+    text-align: center;
+    width:120px;
+	color: #fff;
+
+
+}
+
+header form[name="search"] + ul + ul + a {
+	background: url("../img-maquette/picto-panier.png") no-repeat scroll 4px 5px #009ece;
+    display: inline-block;
+    margin: 5px 0 5px 5px;
+    padding-bottom: 5px;
+    padding-top: 46px;
+    text-align: center;
+    width: 55px;
+	color: #fff;
+}
+
+header form[name="search"] + ul + ul + a:hover {
+	cursor: pointer;
+}
+
+
+/*==============================
+	Footer
+================================*/
+
+footer {
+	height:130px;
+	background:url("../img-maquette/pattern2.png");
+	/*margin-top:20px;*/
+}
+
+footer #footer-content {
+	width:1024px;
+	margin:0px auto;
+}
+
+footer #footer-content ul:first-child {
+	float:left;
+}
+
+
+footer #footer-content ul:first-child li {
+	font-family:'allerlight';
+	font-weight:bold;
+	font-size:14px;
+	margin:10px 0px;
+	color: #fff;
+}
+
+footer #footer-content ul:first-child + p {
+	font-family:'allerlight';
+	font-weight:bold;
+	font-size:14px;
+	color:#fff;
+	margin-left:347px;
+	padding-top: 10px;
+}
+
+footer #footer-content ul:first-child + p + ul {
+	margin-left:389px;
+	margin-top:10px;
+}
+
+footer #footer-content ul:first-child + p + ul li {
+	float:left;
+	margin:0px 5px;
+}
+
+footer #footer-content ul:first-child + p + ul + p {
+	color: #fff;
+    float: right;
+    font-family: "allerlight";
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 24px;
+    margin-top: -26px;
+}
+
+

@@ -1,0 +1,48 @@
+/*===========================
+	PAGE EVENEMENTS
+==========================*/
+#un_evenement {
+	font-family: 'quattrocento_sansregular';
+    height: 30px;
+    margin-bottom: 30px;
+    padding-top: 14px;
+	padding-left:10px;
+    position: relative;
+	-moz-box-shadow: 3px 2px 3px 0px #828282;
+	-webkit-box-shadow: 3px 2px 3px 0px #828282;
+	-o-box-shadow: 3px 2px 3px 0px #828282;
+	box-shadow: 3px 2px 3px 0px #828282;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#828282, Direction=123, Strength=3);
+	position:relative;
+}
+
+#un_evenement span +h2 +span {
+	text-transform:uppercase;
+	font-weight:bold;
+	font-size:12px;
+}
+
+#un_evenement a {
+	background: none repeat scroll 0 0 #d12323;
+    border-color: #8e1818 !important;
+    border-style: solid !important;
+    border-width: 0.5px 0.5px 3px !important;
+    bottom: 6px;
+    color: #fff;
+    font-family: "quattrocento_sansregular";
+    font-weight: bold;
+    height: 21px;
+    padding-top: 7px;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    width: 145px;
+	
+}
+
+#un_evenement h2 {
+	font-family:"allerregular";
+	display:inline-block;
+	font-size: 16px;
+	margin: 0 5px;
+}

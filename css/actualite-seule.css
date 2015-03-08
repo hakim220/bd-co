@@ -1,0 +1,52 @@
+
+/*===========================
+	PAGE ACTUALITES_SEULE
+==========================*/
+.actualite_seule h2 {
+	text-align:center;
+	font-family:"allerregular";
+	font-size:25px;
+	margin-bottom:10px;
+}
+
+.actualite_seule h2 + img {
+	display:block;
+	margin:0px auto;
+}
+
+.actualite_seule h2 + img + br + span {
+	display:block;
+	text-align:center;
+	font-family:"allerlight";
+	margin-bottom:10px;
+}
+
+.actualite_seule h2 + img + br + span + p {
+	font-family: "quattrocento_sansregular";
+	font-size:17px;
+	line-height:19px;
+	margin-bottom:10px;
+}
+
+.actualite_seule h2 + img + br + span + p + p {
+	font-family:"allerlight";
+	font-weight:bold;
+	font-size:13px;
+}
+
+.actualite_seule h2 + img + br + span + p + p span:first-child {
+	text-decoration:underline;
+}
+
+.actu_complementaire {
+	font-family:"allerregular";
+	font-size:15px;
+	margin:5px 0px; 
+}
+
+.actu_complementaire + a {
+	font-family:"allerlight";
+	font-size:13px;
+	margin:5px 0px; 
+	text-decoration:underline;
+}

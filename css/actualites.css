@@ -1,0 +1,60 @@
+
+/*===========================
+	PAGE ACTUALITES
+==========================*/
+.une_actualite {
+	margin:15px 0px;
+	position:relative;
+}
+
+.une_actualite .photo_miniature {
+	display:inline-block;
+	vertical-align:top;
+	width:200px;
+} 
+
+.une_actualite .content_actualite {
+	display:inline-block;
+	vertical-align:top;
+	width:750px;
+	font-family:"allerlight";
+} 
+
+.une_actualite .content_actualite h2 {
+	font-family: "allerregular";
+	font-size:17px;
+	margin-bottom:5px;
+}
+
+.une_actualite .content_actualite p {
+	font-family: "quattrocento_sansregular";
+	margin-top:5px;
+}
+
+.une_actualite .content_actualite h2 + span {
+	font-style:italic;
+	text-decoration:underline;
+}
+
+.une_actualite .content_actualite h2 + span + span + span {
+	font-weight:bold;
+	color:#D12323;
+}
+
+.une_actualite .content_actualite .lire_suite {
+	bottom: 10px;
+    float: right;
+    position: absolute;
+    right: 5px;
+	 background: none repeat scroll 0 0 #D12323;
+    color: #fff;
+    height: 21px;
+    padding-top: 7px;
+    text-align: center;
+    width: 120px;
+	border-width: 0.5px 0.5px 3px !important;
+	border-color:#8E1818 !important;
+	border-style:solid !important;
+	font-family: "quattrocento_sansregular";
+	font-weight:bold;
+}

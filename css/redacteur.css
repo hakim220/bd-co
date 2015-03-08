@@ -1,0 +1,40 @@
+
+/*===========================
+	PAGE REDACTEUR
+==========================*/
+#content_redacteur h2 {
+	font-family: "allerregular";
+    font-size: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#content_redacteur img {
+	display: block;
+    margin: 0 auto;
+}
+
+#content_redacteur p {
+	font-family: "quattrocento_sansregular";
+    font-size: 17px;
+    line-height: 19px;
+    margin-bottom: 10px;
+}
+
+#content_redacteur p span {
+	font-weight:bold;
+}
+
+#content_redacteur  .article_auteur {
+	font-family: "allerregular";
+    font-size: 15px;
+    margin: 5px 0;
+}
+
+
+#content_redacteur a {
+	font-family: "allerlight";
+    font-size: 13px;
+    margin: 5px 0;
+    text-decoration: underline;
+}

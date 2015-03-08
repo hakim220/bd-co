@@ -1,0 +1,23 @@
+==================
+	BDD 
+===================
+
+-a voir si je mets des enum pour le multilingue des actualit�s / redacteur actu et cat�gorie actu...
+
+
+/*=================
+	
+	Point � regler
+=================*/
+	la gestion du css => pas tout dans un fichier
+	le multilingue pour ce qui a �t� fait
+	la date qui apparait au mauvais format
+	faire des class CSS pour alleger le code
+
+
+/*=========================
+	A faire
+============================*/
+
+rajouter le partage sur les r�seaux sociaux pour les articles et evenemts
+gerer le menu dynamiquement en php

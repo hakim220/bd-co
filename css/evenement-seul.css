@@ -1,0 +1,39 @@
+
+/*===========================
+	PAGE EVENEMENTS_SEUL
+==========================*/
+
+#fiche_evenement h2 {
+	font-family: "allerregular";
+    font-size: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#fiche_evenement img {
+	display: block;
+    margin: 0 auto;
+}
+
+#fiche_evenement p {
+	font-family: "quattrocento_sansregular";
+    font-size: 17px;
+    line-height: 19px;
+    margin-bottom: 10px;
+}
+
+#fiche_evenement a {
+	background: none repeat scroll 0 0 #d12323;
+    border-color: #8e1818 !important;
+    border-style: solid !important;
+    border-width: 0.5px 0.5px 3px !important;
+    color: #fff;
+    display: block;
+    font-family: "quattrocento_sansregular";
+    font-weight: bold;
+    height: 33px;
+    padding-top: 2px;
+    text-align: center;
+    width: 129px;
+	float:right;
+}
