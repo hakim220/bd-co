@@ -21,8 +21,13 @@
 	  
 	  
 	  <script src="js/jquery.js"></script>
+	  
+	  <!--gestion du slider-->
 	  <script src="js/bx_slider/jquery.bxslider.min.js"></script>
+	  <!--gestion du reseaux social-->
 	  <script src="js/socialcount/socialcount.js"></script>
+	 
+	 
 	  <script>
 	  $(document).ready(function(){
 			

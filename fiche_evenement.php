@@ -15,7 +15,7 @@
 			<img src="<?php echo $evenements['image']; ?>" alt="<?php echo $evenements['alt_image']; ?>"/>
 			<span class="couleur-bleu"><?php echo $evenements['date']; ?></span>
 			<p><?php echo $evenements['texte']; ?></p>
-			<?php echo "<a href='index.php?menu=evenements&langue={$langue}' class='border2 bouton-rouge' >Retour aux évenements</a>"; ?>
+			<?php echo "<a href='index.php?menu=evenements&amp;langue={$langue}' class='border2 bouton-rouge' >Retour aux évenements</a>"; ?>
 				
 		</div>
 		

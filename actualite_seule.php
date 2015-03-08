@@ -23,7 +23,7 @@
 				<p><?php echo $actu['texte'];  ?></p>
 				
 				<p class="couleur-bleu">
-				<span> <?php echo "<a href='index.php?redacteur={$actu['id_redacteur_actualite']}&langue={$langue}'>" ?><?php echo 'par '. $actu['nom'] .' '. $actu['prenom'] ; ?></a></span>
+				<span> <?php echo "<a href='index.php?redacteur={$actu['id_redacteur_actualite']}&amp;langue={$langue}'>" ?><?php echo 'par '. $actu['nom'] .' '. $actu['prenom'] ; ?></a></span>
 				<span>, publié le <?php echo $actu['date_publication'] ;  ?></span>
 				</p>
 		</div>

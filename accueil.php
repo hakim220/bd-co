@@ -2,7 +2,19 @@
 		<section id="content_home_page">
 			<div id="slider">
 				<ul class="bxslider">
-				  <li><img src="img-maquette/slide1.jpg" alt="xx" /></li>
+				  <li style="position: relative;"><img src="img-maquette/slide1.jpg" alt="xx" />
+				  	<div style="background: none repeat scroll 0 0 #000;
+    bottom: 0;
+    height: 51px;
+    opacity: 0.8;
+    padding: 5px 0 0 19px;
+    position: absolute;
+    width: 100%;">
+				  		<h3 class="couleur-blanche" style="font-family: allerregular; font-size: 16px; margin-bottom: 2px; font-weight: bold; opacity: 1;">Nouveau futura</h3>
+				  		<p class="couleur-blanche" style="font-family: quattrocento_sansregular; font-size: 12px; font-weight: bold; opacity: 1;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 's standard dummy text</p>
+				  	</div>
+				  	
+				  </li>
 				  <li><img src="img-maquette/slide1.jpg" alt="xx" /></li>
 				  
 				</ul>

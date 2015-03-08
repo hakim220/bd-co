@@ -13,7 +13,7 @@
     $menu_principal = retourne_tableau($requete_menu_principal);		
 		foreach($menu_principal as $lien){
 
-		echo "<li><a href=index.php?menu=".$lien['lien'].">". $lien['designation']."</a>";
+		echo "<li><a href=\"index.php?menu=".$lien['lien']."\">". $lien['designation']."</a>";
 			 
 		if($lien['lien']=='actualites') {
 			// récupération des données pour le sous-menu de actualites
@@ -25,7 +25,7 @@
 			
 			echo "<ul id=\"sous-menu\">";
 			foreach($sous_menu as $lien_sous_menu) {
-				echo"<li><a href=index.php?menu=".$lien_sous_menu['lien'].">". $lien_sous_menu['designation']."</a></li>";	
+				echo"<li><a href=\"index.php?menu=".$lien_sous_menu['lien']."\">". $lien_sous_menu['designation']."</a></li>";	
 			}
 			echo "</ul>";
 		}
@@ -75,7 +75,7 @@
 					
 						<li class="bouton-bleu"><a href="index.php?menu=connexion">Connexion</a></li>
 						<li class="bouton-bleu"><a href="index.php?menu=inscription">Inscription</a></li>
-						<?php// } ?>
+						
 					</ul>
 					<!-- il faudra ajouter le ul-li "mon compte/deconnexion" quand l'utilisateur est connecté... -->
 					

@@ -35,7 +35,7 @@
 	//var_dump($article_ecrit);
 
 	foreach($article_ecrit as $article) {
-		 echo "<a href='index.php?actualite={$article['id_actualite_seule']}&langue={$langue}' >- $article[titre]</a><br/>"; 
+		 echo "<a href='index.php?actualite={$article['id_actualite_seule']}&amp;langue={$langue}' >- $article[titre]</a><br/>"; 
 	}
   
   ?>

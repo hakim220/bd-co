@@ -21,11 +21,11 @@
 			</div>
 			<div class="content_actualite">
 				<h2><?php echo $news['titre'] ;?></h2>
-				<span><?php echo "<a href='index.php?redacteur={$news['id_redacteur_actualite']}&langue={$langue}'>" ?><?php echo 'par '. $news['nom'] .' '. $news['prenom'] ; ?></a></span>
+				<span><?php echo "<a href='index.php?redacteur={$news['id_redacteur_actualite']}&amp;langue={$langue}'>" ?><?php echo 'par '. $news['nom'] .' '. $news['prenom'] ; ?></a></span>
 				<span>le <?php echo $news['date_publication'] ;  ?></span>
 				<span class="couleur-rouge"> <?php echo $news['categorie_actualite'] ;  ?></span>
 				<p><?php echo substr($news['texte'],0,200).'...' ;  ?></p>
-				<?php echo "<a class=\"lire_suite bouton-rouge\" href='index.php?actualite={$news['id_actualite_seule']}&langue={$langue}' >Lire la suite</a>"; ?>
+				<?php echo "<a class=\"lire_suite bouton-rouge\" href='index.php?actualite={$news['id_actualite_seule']}&amp;langue={$langue}' >Lire la suite</a>"; ?>
 			
 			</div>
 		</div>

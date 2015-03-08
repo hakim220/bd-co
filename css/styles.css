@@ -390,7 +390,7 @@ font-family:'allerlight';
 /*===========================
 	PAGE EVENEMENTS
 ==========================*/
-#un_evenement {
+.un_evenement {
 	font-family: 'quattrocento_sansregular';
     height: 30px;
     margin-bottom: 30px;
@@ -400,13 +400,13 @@ font-family:'allerlight';
 	position:relative;
 }
 
-#un_evenement span +h2 +span {
+.un_evenement span +h2 +span {
 	text-transform:uppercase;
 	font-weight:bold;
 	font-size:12px;
 }
 
-#un_evenement a {
+.un_evenement a {
     bottom: 6px;
     height: 21px;
     padding-top: 7px;
@@ -415,7 +415,7 @@ font-family:'allerlight';
     width: 145px;
 }
 
-#un_evenement h2 {
+.un_evenement h2 {
 	font-family:"allerregular";
 	display:inline-block;
 	font-size: 16px;
