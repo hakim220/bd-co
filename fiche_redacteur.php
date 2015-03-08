@@ -18,9 +18,9 @@
 	<h2><?php echo $redacteurs['nom'] ." ". $redacteurs['prenom'] ?></h2>
 	<img src="<?php echo $redacteurs['photo_redacteur'] ?>" alt=""/>
 	<p><?php echo $redacteurs['resume'] ?></p>
-	<p><span>E-mail: </span><?php echo $redacteurs['email'] ?></p>
+	<p><span class="couleur-bleu">E-mail: </span><?php echo $redacteurs['email'] ?></p>
  
- <p class="article_auteur">Les articles de cet auteur :</p>
+ <p class="article_auteur couleur-rouge">Les articles de cet auteur :</p>
   <?php
   
   // requete pour avoir des articles écrits par cet auteur

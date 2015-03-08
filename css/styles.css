@@ -367,11 +367,11 @@ font-family:'allerlight';
 	font-family: "quattrocento_sansregular";
     font-size: 17px;
     line-height: 19px;
-    margin-bottom: 10px;
+    margin: 10px 0px;
 }
 
 #content_redacteur p span {
-	font-weight:bold;
+	/*font-weight:bold;*/
 }
 
 #content_redacteur  .article_auteur {
