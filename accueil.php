@@ -10,10 +10,10 @@
     padding: 5px 0 0 19px;
     position: absolute;
     width: 100%;">
+    
 				  		<h3 class="couleur-blanche" style="font-family: allerregular; font-size: 16px; margin-bottom: 2px; font-weight: bold; opacity: 1;">Nouveau futura</h3>
 				  		<p class="couleur-blanche" style="font-family: quattrocento_sansregular; font-size: 12px; font-weight: bold; opacity: 1;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 's standard dummy text</p>
 				  	</div>
-				  	
 				  </li>
 				  <li><img src="img-maquette/slide1.jpg" alt="xx" /></li>
 				  
