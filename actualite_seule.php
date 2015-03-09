@@ -54,6 +54,6 @@
 		echo "<p class=\"actu_complementaire couleur-rouge\">Articles qui pourraient vous interesser :</p>";
 		foreach($articles_complementaire as $article){
 			
-			 echo "<a href='index.php?actualite={$article['id_actualite_seule']}&langue={$langue}' >$article[titre]</a> <br/>"; 		
+			 echo "<a href='index.php?actualite={$article['id_actualite_seule']}&amp;langue={$langue}' >$article[titre]</a> <br/>"; 		
 		}
  ?>
