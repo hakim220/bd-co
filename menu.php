@@ -65,17 +65,17 @@
 					</ul>
 					<ul>
 					
-						<?php  //if($connecte == true) { ?>
+						<?php  if($_SESSION['login'] == true) { ?>
 						
-						<!--
-						<li class="border"><a href="index.php?menu=connexion">Mon espace</a></li>
-						<li class="border"><a href="index.php?menu=inscription">Deconnexion</a></li>
-						-->
-						<?php //} else {?>
+						
+						<li class="bouton-bleu"><a href="membre.php">Mon espace</a></li>
+						<li class="bouton-bleu"><a href="index.php?menu=deconnexion">Deconnexion</a></li>
+						
+						<?php } else {?>
 					
-						<li class="bouton-bleu"><a href="index.php?menu=connexion">Connexion</a></li>
+						<li class="bouton-bleu"><a href="user-connecte.php?page=connexion">Connexion</a></li>
 						<li class="bouton-bleu"><a href="index.php?menu=inscription">Inscription</a></li>
-						
+						<?php } ?>
 					</ul>
 					<!-- il faudra ajouter le ul-li "mon compte/deconnexion" quand l'utilisateur est connecté... -->
 					

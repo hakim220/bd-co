@@ -72,4 +72,4 @@ Repetez l'E-mail<input type="email" name="repeat-email"/>  <br/>
 
 </form>
 
-<p><a href="index.php?menu=connexion">Je possede deja un compte</a></p>
+<p><a href="user-connecte.php?page=connexion">Je possede deja un compte</a></p>

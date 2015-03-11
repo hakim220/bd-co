@@ -10,6 +10,8 @@ include "langue.php";
 
 include "ousuisje.php";
 
+include "connexion.php";
+
 // Fichier css à charger : il est possible de tester ici le navigateur pour changer de fichier éventuellement.
 
 /*
@@ -44,7 +46,7 @@ else {
 // Les header HTML sont chargés à part pour être un minimum dynamique
 include "header.php";
 
-
+var_dump($_SESSION['login']);
 // Les header HTML sont chargés à part pour être un minimum dynamique
 
 

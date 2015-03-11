@@ -24,13 +24,23 @@ if(isset($_POST["bouton-connexion"])) {
 		if ($data[0] == 1) {
 			session_start();
 			$_SESSION['email'] = $_POST['email'];
+			//
+			//$checklogin=true;
+			$_SESSION['login'] = true;
+			$_SESSION['erreur_mdp']="";
+			$_SESSION['champs_oublies']="";
+			//$checklogin= $_SESSION['login'];
+			//
 			header('Location: membre.php');
-			exit();
+			//exit();
 		}
 		// si on ne trouve aucune réponse, le visiteur s'est trompé soit dans son login, soit dans son mot de passe
 		elseif ($data[0] == 0) {
 			$erreur = 'Compte non reconnu.';
 			echo $erreur;
+			
+			$_SESSION['erreur_mdp'] = "mot de passe ou login incorrect";
+			header('Location: index.php?menu=espace-connexion');
 		}
 		// sinon, alors la, il y a un gros problème :)
 		else {
@@ -39,10 +49,21 @@ if(isset($_POST["bouton-connexion"])) {
 		}
 	}
 	else {
-		echo "il faut remplir tous les champs";
+		
+		$_SESSION['champs_oublies'] = "il faut remplir tous les champs";
+		header('Location: index.php?menu=espace-connexion');
+		//echo "il faut remplir tous les champs";
 	}
 	
 		
+}
+else {
+	header("location : 'index.php'");
+	
+}
+
+if(isset($_SESSION['login'])==false) {
+	$_SESSION['login'] = false;
 }
 	
 
@@ -50,6 +71,7 @@ if(isset($_POST["bouton-connexion"])) {
 
 ?>
 
+<?php if (isset($_GET['page']) && $_GET['page']=='connexion' ) {  ?>
 
 
 <form method="post" action="">
@@ -64,3 +86,8 @@ Mot de passe<input type="password" name="password"/> <br/>
 
 
 <p><a href="index.php?menu=inscription">Pas encore membre </a></p>
+<?php 
+}else {}
+
+
+?>
