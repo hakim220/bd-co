@@ -2,9 +2,7 @@
 
 // récupération des données sur le slider
 	
-	$sql = "SELECT * FROM slider
-	WHERE langue= '$langue' 
-	";
+	$sql = "SELECT * FROM slider WHERE langue= '$langue' ";
     $connexion_bdd = cree_connexion();
     $requete_slider = requete($connexion_bdd, $sql);
     $content_slider = retourne_tableau($requete_slider);
