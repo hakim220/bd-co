@@ -1,8 +1,25 @@
+<?php 
+
+// récupération des données sur le slider
+	
+	$sql = "SELECT * FROM slider
+	WHERE langue= '$langue' 
+	";
+    $connexion_bdd = cree_connexion();
+    $requete_slider = requete($connexion_bdd, $sql);
+    $content_slider = retourne_tableau($requete_slider);
+
+	?>
 		
 		<section id="content_home_page">
 			<div id="slider">
 				<ul class="bxslider">
-				  <li style="position: relative;"><img src="img-maquette/slide1.jpg" alt="xx" />
+					<?php 
+						foreach ($content_slider as $slide) {
+							
+					?>
+					
+				  <li style="position: relative;"><a href="<?php echo $slide['lien_page']; ?>" target="_blank"><img src="<?php echo $slide['image']; ?>" alt=<?php echo $slide['attribut_alt_img']; ?>" /></a>
 				  	<div style="background: none repeat scroll 0 0 #000;
     bottom: 0;
     height: 51px;
@@ -11,13 +28,14 @@
     position: absolute;
     width: 100%;">
     
-				  		<h3 class="couleur-blanche" style="font-family: allerregular; font-size: 16px; margin-bottom: 2px; font-weight: bold; opacity: 1;">Nouveau futura</h3>
-				  		<p class="couleur-blanche" style="font-family: quattrocento_sansregular; font-size: 12px; font-weight: bold; opacity: 1;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 's standard dummy text</p>
+				  		<h3 class="couleur-blanche" style="font-family: allerregular; font-size: 16px; margin-bottom: 2px; font-weight: bold; opacity: 1;"><?php echo $slide['titre_slider']; ?></h3>
+				  		<p class="couleur-blanche" style="font-family: quattrocento_sansregular; font-size: 12px; font-weight: bold; opacity: 1;"><?php echo $slide['texte_complementaire']; ?></p>
 				  	</div>
 				  </li>
-				  <li><img src="img-maquette/slide1.jpg" alt="xx" /></li>
-				  
+				  <?php }?>
 				</ul>
+				
+				  
 			</div>
 			
 			<div id="derniere_actu">
@@ -27,7 +45,7 @@
 					<img src="img-maquette/bd-amateur.jpg" alt="xx"/>
 					<div>
 						<h1>La BD amateur à l'honneur à Paris</h1>
-						<p>Par Jhon Smith, le 12/02/2015 <strong>News</strong></p>    <!--A voir si on mets la date dans une balise html date...?? -->
+						<p>Par Jhon Smith, le 12/02/2015 <strong class="couleur-rouge">News</strong></p>    <!--A voir si on mets la date dans une balise html date...?? -->
 						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en...</p>
 						<a  href="#" class="lire_suite bouton-bleu couleur-blanche">Lire la suite</a>
 					</div>
