@@ -38,6 +38,7 @@
 				  
 			</div>
 			
+			
 			<div id="derniere_actu">
 				<h2>Les dernières actualités</h2>
 				<div class="trait-droit "></div>
