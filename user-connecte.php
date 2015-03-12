@@ -4,6 +4,9 @@
 include "session.php";
 
 
+//test envoie/recup ordi imapp->mon pc  
+
+
 // Chargement des fonctions utiles
 include "initialisations.php";
 
