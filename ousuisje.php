@@ -3,6 +3,8 @@
 $contenu = "accueil"; // Page par défaut
 
 
+// test import github -> git
+
 /*** 
 								Gestion de deux cas :      
 1) si l'utilisateur passe à l'anglais, quitte le site, et reviens sur la home (racine du site)
