@@ -271,16 +271,16 @@ header form[name="search"] input[type="search"] {
 }
 
 header form[name="search"] input[type="submit"] {
- 	background: url("../img-maquette/picto-search.png") no-repeat scroll 12px 2px #009ece; 
+ 	background: url("../img-maquette/picto-search.png") no-repeat scroll 12px 2px #009ece;
+    border: none;
     display: inline-block;
     left: 182px;
     padding-top: 12px;
     position: absolute;
     text-align: center;
-    top: -1px;
+    top: 0;
     width: 55px;
     z-index: 1;
-    border:1px solid #005D77;
 }
 
 header form[name="search"] input[type="submit"]:hover {

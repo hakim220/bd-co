@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Jeu 12 Mars 2015 à 22:59
+-- Généré le: Ven 13 Mars 2015 à 22:42
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `membres` (
   `code_postal_livraison` varchar(100) DEFAULT NULL,
   `ville_livraison` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_membre`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Contenu de la table `membres`
@@ -113,7 +113,8 @@ INSERT INTO `membres` (`id_membre`, `pseudo`, `civilite`, `nom`, `prenom`, `cour
 (1, 'jack22', 'monsieur', 'Jack', 'Mickael', 'jack@gmail.com', 'blabla', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (2, 'fgfg', 'monsieur', 'ffff', 'ggggggggg', 'g@gmail.com', 'ggggg', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (3, 'utilisateur', 'madame', 'malo', 'laurie', 'laur@gmail.com', 'lala', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 'utilisateur', 'madame', 'sachot', 'Milene', 'mil@gmail.com', '12345', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(4, 'utilisateur', 'madame', 'sachot', 'Milene', 'mil@gmail.com', '12345', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(5, 'test', 'monsieur', 'Max', 'Martin', 'k@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 

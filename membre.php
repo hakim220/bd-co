@@ -17,20 +17,9 @@ include "connexion.php";
 // Les header HTML sont chargés à part pour être un minimum dynamique
 include "header.php";
 
-
+if(isset($_SESSION['login']) && $_SESSION['login']==true) {
 $email = $_SESSION['email'];
 
-/*
-if (!isset($_SESSION['email'])) {
-	header ('Location: index.php');
-	exit();
-}
-
-else {
-$connecte = true;
-}
-  */
- 
 ?>
 
 
@@ -46,3 +35,14 @@ Bienvenue <?php echo htmlentities(trim($_SESSION['email'])); ?> !<br />
 
 
 <a href="index.php?menu=deconnexion">Déconnexion</a>
+
+<?php 
+
+} else {
+	// si un utilisateur tente d'acceder à la page membre alors qu'il n'est pas connecté, il sera redirigé
+	header('Location: index.php');
+	
+}
+
+include "footer.php";
+?>

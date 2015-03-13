@@ -20,10 +20,11 @@
 						if(strlen($password) >=4) {
 							if($password == $repeatPassword) {
 								// Insertion des infos sur le membre dans la BDD
+								$password = md5($password);
 								$sql = "INSERT INTO membres(id_membre,pseudo,civilite,nom,prenom,courriel,password) VALUES('','$pseudo','$civilite','$nom','$prenom','$email','$password')";
 								$inscription_membres = cree_connexion();
 								$requete_inscription_membres = requete($inscription_membres, $sql);
-								echo "<p>Vous avez bien été enregistré ! <a href=\"index.php?menu=connexion\">Vous pouvez vous connecter</a></p>";
+								echo "<p>Vous avez bien été enregistré ! <a href=\"user-connecte.php?page=connexion\">Vous pouvez vous connecter</a></p>";
 							}
 							else {
 								echo "Les mots de passe ne sont pas identiques";
@@ -48,28 +49,22 @@
 		else {
 			echo "<p>Veuillez saisir tous les champs</p>";
 		}
-	
 }
 ?>
 
-
-
-
 <form method="post" action="">
-Pseudo<input type="text" name="pseudo"/>  <br/>
-Civilité <br/>
-Monsieur<input type="radio" name="civilite" value="monsieur" checked="checked"/>
-Madame <input type="radio" name="civilite" value="madame"/>
-<br/>
-Nom<input type="text" name="nom"/>  <br/>
-Prenom<input type="text" name="prenom"/>  <br/>
-Mot de passe<input type="password" name="password"/>  <br/>
-Repetez le mot de passe<input type="password" name="repeat-password"/>  <br/>
-E-mail<input type="email" name="email"/>  <br/>
-Repetez l'E-mail<input type="email" name="repeat-email"/>  <br/>
-<input type="submit" name="bouton-inscription" value="Valider"/>
-
-
+	Pseudo<input type="text" name="pseudo"/>  <br/>
+	Civilité <br/>
+	Monsieur<input type="radio" name="civilite" value="monsieur" checked="checked"/>
+	Madame <input type="radio" name="civilite" value="madame"/>
+	<br/>
+	Nom<input type="text" name="nom"/>  <br/>
+	Prenom<input type="text" name="prenom"/>  <br/>
+	Mot de passe<input type="password" name="password"/>  <br/>
+	Repetez le mot de passe<input type="password" name="repeat-password"/>  <br/>
+	E-mail<input type="email" name="email"/>  <br/>
+	Repetez l'E-mail<input type="email" name="repeat-email"/>  <br/>
+	<input type="submit" name="bouton-inscription" value="Valider"/>
 </form>
 
 <p><a href="user-connecte.php?page=connexion">Je possede deja un compte</a></p>
