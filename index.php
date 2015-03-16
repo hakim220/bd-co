@@ -54,6 +54,9 @@ var_dump($_SESSION['login']);
 
 //$contenu = 'realisations';
 
+
+// redirection vers le bon evenement en fonction de l'evenement choisi par l'utilisateur
+
 if(isset($_GET['event'])) {
     $contenu = 'fiche_evenement';
 	
@@ -67,10 +70,13 @@ if(isset($_GET['event'])) {
 }
 
 
+
+
+// redirection vers le bon article en fonction de l'article choisi par l'utilisateur
+
+
 if(isset($_GET['actualite'])) {
     $contenu = 'actualite_seule';
-	// ajout d'un condition ici pour checker qu'on a bien un chiffre dans l'id => on regarde si l'utilisateur touche à l'url
-	// le <= 18 sera à incrementer à chaque fois que j'ajoute une realisation...
 	
 	if(is_numeric($_GET['actualite']) == true  && strpbrk($_GET['actualite'], '.') ==false ) {
 		$actualite = $_GET['actualite'];
@@ -80,10 +86,12 @@ if(isset($_GET['actualite'])) {
 	}
 }
 
+
+// redirection vers la bonne page redacteur en fonction du redacteur choisi par l'utilisateur
+
 if(isset($_GET['redacteur'])) {
     $contenu = 'fiche_redacteur';
-	// ajout d'un condition ici pour checker qu'on a bien un chiffre dans l'id => on regarde si l'utilisateur touche à l'url
-	// le <= 18 sera à incrementer à chaque fois que j'ajoute une realisation...
+
 	
 	if(is_numeric($_GET['redacteur']) == true &&  strpbrk($_GET['redacteur'], '.') ==false ) {
 		$redacteur = $_GET['redacteur'];
@@ -92,6 +100,24 @@ if(isset($_GET['redacteur'])) {
 		$redacteur = 1;
 	}
 }
+
+
+
+// redirection vers la bonne page forum en fonction du sujet choisi par l'utilisateur
+
+if(isset($_GET['sujet_forum'])) {
+    $contenu = 'forum_sujet';
+	
+	if(is_numeric($_GET['sujet_forum']) == true &&  strpbrk($_GET['sujet_forum'], '.') ==false ) {
+		$forum_sujet = $_GET['sujet_forum'];
+	}
+	else {
+		$forum_sujet = 1;
+	}
+}
+
+
+
 
 
 // Contenu de la page
