@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Ven 13 Mars 2015 à 22:42
+-- Généré le: Mar 17 Mars 2015 à 00:07
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -79,6 +79,61 @@ INSERT INTO `evenements` (`id_evenement`, `date`, `titre`, `image`, `alt_image`,
 (2, '2015-03-10', 'Bd ''s Salon', 'images-photos/salon-bd.jpg', 'image salon bd', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l''imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n''a pas fait que survivre cinq siècles, mais s''est aussi adapté à la bureautique informatique, sans que son contenu n''en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.', 'a venir', 'en'),
 (3, '2015-03-12', 'Lancement d''une collection', 'images-photos/collection-bd.jpg', 'image collection bd', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l''imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n''a pas fait que survivre cinq siècles, mais s''est aussi adapté à la bureautique informatique, sans que son contenu n''en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.', 'a eu lieu', 'fr'),
 (4, '2015-03-12', 'Collections is coming', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant imp', 'image collection bd', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l''imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n''a pas fait que survivre cinq siècles, mais s''est aussi adapté à la bureautique informatique, sans que son contenu n''en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.', 'a eu lieu', 'en');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `forum_message`
+--
+
+DROP TABLE IF EXISTS `forum_message`;
+CREATE TABLE IF NOT EXISTS `forum_message` (
+  `id_forum_message` int(11) NOT NULL AUTO_INCREMENT,
+  `fk_sujet` int(11) NOT NULL,
+  `fk_membre` int(11) NOT NULL,
+  `message` text,
+  `date_post` date DEFAULT NULL,
+  PRIMARY KEY (`id_forum_message`),
+  KEY `message-sujet_idx` (`fk_sujet`),
+  KEY `message-membre_idx` (`fk_membre`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Contenu de la table `forum_message`
+--
+
+INSERT INTO `forum_message` (`id_forum_message`, `fk_sujet`, `fk_membre`, `message`, `date_post`) VALUES
+(1, 1, 5, 'Bonjour à tous, je me demandais où est-ce que je pourrais trouver le BD xxxxx', '2015-03-18'),
+(2, 1, 5, 'je fais un test', '2015-03-08'),
+(3, 2, 5, 'blablablalblalzlfdkofokdfkodkofkodfdokfokd', '2015-03-08'),
+(4, 3, 5, 'je tente de poster un 3eme sujet', '2015-03-08'),
+(5, 2, 5, 'je fais une reponse pour voir si tout marche', '2015-03-08');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `forum_sujet`
+--
+
+DROP TABLE IF EXISTS `forum_sujet`;
+CREATE TABLE IF NOT EXISTS `forum_sujet` (
+  `id_forum_sujet` int(11) NOT NULL AUTO_INCREMENT,
+  `fk_membre` int(11) NOT NULL,
+  `sujet` varchar(255) DEFAULT NULL,
+  `date_publication` date DEFAULT NULL,
+  PRIMARY KEY (`id_forum_sujet`),
+  KEY `forum-membre_idx` (`fk_membre`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Contenu de la table `forum_sujet`
+--
+
+INSERT INTO `forum_sujet` (`id_forum_sujet`, `fk_membre`, `sujet`, `date_publication`) VALUES
+(1, 5, 'Ou pouvons-nous trouver la Bd xxxxx', '2015-03-18'),
+(2, 5, 'test nouveau sujet', '2015-03-08'),
+(3, 5, 'test sujet 3', '2015-03-08'),
+(4, 5, 'sujet 4 de test ', '2015-03-08');
 
 -- --------------------------------------------------------
 
@@ -199,6 +254,23 @@ INSERT INTO `slider` (`id_slider`, `image`, `attribut_alt_img`, `titre_slider`, 
 (2, 'img-maquette/slide1.jpg', 'slide 1 ', 'New Futura', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s', '#', 'en'),
 (3, 'img-maquette/slide1.jpg', 'slide 1', 'Slide 2 ', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s', '#', 'fr'),
 (4, 'img-maquette/slide1.jpg', 'slide 1', 'Slide number 2 ', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s', '#', 'en');
+
+--
+-- Contraintes pour les tables exportées
+--
+
+--
+-- Contraintes pour la table `forum_message`
+--
+ALTER TABLE `forum_message`
+  ADD CONSTRAINT `message-sujet` FOREIGN KEY (`fk_sujet`) REFERENCES `forum_sujet` (`id_forum_sujet`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `message-membre` FOREIGN KEY (`fk_membre`) REFERENCES `membres` (`id_membre`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Contraintes pour la table `forum_sujet`
+--
+ALTER TABLE `forum_sujet`
+  ADD CONSTRAINT `forum-membre` FOREIGN KEY (`fk_membre`) REFERENCES `membres` (`id_membre`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
