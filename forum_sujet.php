@@ -24,6 +24,7 @@
 	
 	
 	echo  $tous_messages[0]['sujet'] ;
+	echo  $tous_messages[0]['categorie_sujet'] ;
 ?>
 
 <a href="index.php?menu=forum">Retour au forum</a>
