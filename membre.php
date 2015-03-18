@@ -43,9 +43,14 @@ Bienvenue <?php echo htmlentities(trim($_SESSION['email'])); ?> !<br />
 					
 					var_dump($info_membre);
 					
+					// stockage de l'id et du pseudo du membre pour les réutiliser au cas où il remplirait le forum 
+
 					$_SESSION['membre'] = $info_membre['id_membre'];
+					$_SESSION['pseudo'] = $info_membre['pseudo'];
 					echo $_SESSION['membre'];
+					echo $_SESSION['pseudo'];
 ?>
 
-
 <a href="index.php?menu=deconnexion">Déconnexion</a>
+
+<?php include "footer.php";   ?>

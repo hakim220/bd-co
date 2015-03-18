@@ -2,10 +2,21 @@
 	SLIDER
 ======================*/
 #content_home_page #slider {
-	clear:both;
-	margin-top:10px;
+ 	clear: both;
+    margin-left: -20px;
+    margin-top: -16px;
+    width: 1024px;
 }
 
+#content_home_page #slider .bandeau-slider {
+	background: none repeat scroll 0 0 #000;
+    bottom: 0;
+    height: 51px;
+    opacity: 0.8;
+    padding: 5px 0 0 19px;
+    position: absolute;
+    width: 100%;
+}
 /*=======================
 	derniere_actu	
 =======================*/
@@ -28,7 +39,7 @@
 #content_home_page #derniere_actu .trait-droit {
 	width:120px;
 	height:8px;
-	background:#15A6D2;
+	background:#282828;
 	display:inline-block;
 	vertical-align:bottom;
 	margin-bottom:16px;
@@ -95,7 +106,7 @@ font-family:'allerlight';
 }
 
 #content_home_page #conteneur-event-news  #evenement .trait-droit {
-	background: none repeat scroll 0 0 #15a6d2;
+	background: none repeat scroll 0 0 #282828;
     display: inline-block;
     height: 8px;
     margin-bottom: 16px;

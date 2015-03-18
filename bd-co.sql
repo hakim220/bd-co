@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
--- Client: localhost
--- Généré le: Mar 17 Mars 2015 à 00:07
--- Version du serveur: 5.5.24-log
--- Version de PHP: 5.4.3
+-- Client :  127.0.0.1
+-- Généré le :  Mer 18 Mars 2015 à 14:53
+-- Version du serveur :  5.6.17
+-- Version de PHP :  5.5.12
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,8 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données: `bd-co`
+-- Base de données :  `bd-co`
 --
+CREATE DATABASE IF NOT EXISTS `bd-co` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `bd-co`;
 
 -- --------------------------------------------------------
 
@@ -91,23 +93,49 @@ CREATE TABLE IF NOT EXISTS `forum_message` (
   `id_forum_message` int(11) NOT NULL AUTO_INCREMENT,
   `fk_sujet` int(11) NOT NULL,
   `fk_membre` int(11) NOT NULL,
+  `pseudo_membre` varchar(255) NOT NULL,
   `message` text,
   `date_post` date DEFAULT NULL,
   PRIMARY KEY (`id_forum_message`),
   KEY `message-sujet_idx` (`fk_sujet`),
   KEY `message-membre_idx` (`fk_membre`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
 
 --
 -- Contenu de la table `forum_message`
 --
 
-INSERT INTO `forum_message` (`id_forum_message`, `fk_sujet`, `fk_membre`, `message`, `date_post`) VALUES
-(1, 1, 5, 'Bonjour à tous, je me demandais où est-ce que je pourrais trouver le BD xxxxx', '2015-03-18'),
-(2, 1, 5, 'je fais un test', '2015-03-08'),
-(3, 2, 5, 'blablablalblalzlfdkofokdfkodkofkodfdokfokd', '2015-03-08'),
-(4, 3, 5, 'je tente de poster un 3eme sujet', '2015-03-08'),
-(5, 2, 5, 'je fais une reponse pour voir si tout marche', '2015-03-08');
+INSERT INTO `forum_message` (`id_forum_message`, `fk_sujet`, `fk_membre`, `pseudo_membre`, `message`, `date_post`) VALUES
+(1, 1, 5, 'test', 'Bonjour à tous, je me demandais où est-ce que je pourrais trouver le BD xxxxx', '2015-03-18'),
+(2, 1, 5, 'test', 'je fais un test', '2015-03-08'),
+(3, 2, 5, 'test', 'blablablalblalzlfdkofokdfkodkofkodfdokfokd', '2015-03-08'),
+(4, 3, 5, 'test', 'je tente de poster un 3eme sujet', '2015-03-08'),
+(5, 2, 5, 'test', 'je fais une reponse pour voir si tout marche', '2015-03-08'),
+(6, 5, 5, 'test', 'voici un message aléatoire', '2015-03-08'),
+(7, 4, 5, 'test', 'nbfkfkogkodfokgfkopgkofog\r\n(rajouté via php admin)', '2015-03-27'),
+(8, 4, 5, 'test', 'nbfkfkogkodfokgfkopgkofog\r\n(rajouté via php admin)', '2015-03-27'),
+(9, 6, 5, 'test', 'ffffffffdddf', '2015-03-08'),
+(10, 7, 5, 'test', 'dsfsdfsdf', '2015-03-08'),
+(11, 6, 5, 'test', 'ça y est ', '2015-03-08'),
+(12, 7, 5, 'test', 'test de bug', '2015-03-08'),
+(13, 8, 6, 'Monsieur P', 'voici un test hifbsdifsdiofhudf', '2015-03-08'),
+(14, 8, 6, 'Monsieur P', 'jgsdopigsjopdfg,kskopdfplsdfsdfsdf', '2015-03-08'),
+(15, 8, 5, 'test', 'ifjidij^shzôhehi^zenfsgf', '2015-03-08'),
+(16, 8, 5, 'test', 'cest test', '2015-03-08'),
+(17, 8, 5, '5', 'est-ce que ça va marcher', '2015-03-08'),
+(18, 8, 5, 'test', 'ça doit marcher', '2015-03-08'),
+(19, 8, 6, 'Monsieur P', 'nouvelle verif si ça marche', '2015-03-08'),
+(20, 8, 7, 'user22', 'je suis un nouvel utilisateur', '2015-03-08'),
+(21, 12, 7, 'user22', 'fdfdfdgfgfger', '2015-03-08'),
+(22, 11, 7, 'user22', 'dfdfdfdf', '2015-03-08'),
+(23, 12, 7, 'user22', 'dfdfgfgf', '2015-03-08'),
+(24, 12, 7, 'user22', 'zrzrtfrgrr', '2015-03-08'),
+(25, 10, 7, 'user22', 'je repare', '2015-03-12'),
+(26, 9, 7, 'user22', 'je repare part 2', '2015-03-11'),
+(27, 13, 7, 'user22', 'j''avais un probleme de cote, je teste si ça marche 214', '2015-03-08'),
+(28, 13, 7, 'user22', 'j''avais ce probleme, je ne l''ai plus...', '2015-03-08'),
+(29, 8, 7, 'user22', 'je  suis user 22', '2015-03-08'),
+(30, 8, 7, 'user22', 'kjkkhjihiok', '2015-03-08');
 
 -- --------------------------------------------------------
 
@@ -123,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `forum_sujet` (
   `date_publication` date DEFAULT NULL,
   PRIMARY KEY (`id_forum_sujet`),
   KEY `forum-membre_idx` (`fk_membre`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Contenu de la table `forum_sujet`
@@ -133,7 +161,16 @@ INSERT INTO `forum_sujet` (`id_forum_sujet`, `fk_membre`, `sujet`, `date_publica
 (1, 5, 'Ou pouvons-nous trouver la Bd xxxxx', '2015-03-18'),
 (2, 5, 'test nouveau sujet', '2015-03-08'),
 (3, 5, 'test sujet 3', '2015-03-08'),
-(4, 5, 'sujet 4 de test ', '2015-03-08');
+(4, 5, 'sujet 4 de test ', '2015-03-08'),
+(5, 5, 'nouveau test', '2015-03-08'),
+(6, 5, 'blabla', '2015-03-08'),
+(7, 5, 'ererer', '2015-03-08'),
+(8, 6, 'monsieur x poste', '2015-03-08'),
+(9, 7, 'user 22 fait un test', '2015-03-08'),
+(10, 7, 'user 22 fait un test', '2015-03-08'),
+(11, 7, 'user 22 fait un test', '2015-03-08'),
+(12, 7, 'user 22 fait un test', '2015-03-08'),
+(13, 7, 'test avec cote', '2015-03-08');
 
 -- --------------------------------------------------------
 
@@ -158,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `membres` (
   `code_postal_livraison` varchar(100) DEFAULT NULL,
   `ville_livraison` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_membre`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Contenu de la table `membres`
@@ -169,7 +206,9 @@ INSERT INTO `membres` (`id_membre`, `pseudo`, `civilite`, `nom`, `prenom`, `cour
 (2, 'fgfg', 'monsieur', 'ffff', 'ggggggggg', 'g@gmail.com', 'ggggg', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (3, 'utilisateur', 'madame', 'malo', 'laurie', 'laur@gmail.com', 'lala', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (4, 'utilisateur', 'madame', 'sachot', 'Milene', 'mil@gmail.com', '12345', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, 'test', 'monsieur', 'Max', 'Martin', 'k@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(5, 'test', 'monsieur', 'Max', 'Martin', 'k@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, 'Monsieur P', 'monsieur', 'monsieur', 'ppp', 'p@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, 'user22', 'monsieur', 'user', 'usero', 'user22@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -263,8 +302,8 @@ INSERT INTO `slider` (`id_slider`, `image`, `attribut_alt_img`, `titre_slider`, 
 -- Contraintes pour la table `forum_message`
 --
 ALTER TABLE `forum_message`
-  ADD CONSTRAINT `message-sujet` FOREIGN KEY (`fk_sujet`) REFERENCES `forum_sujet` (`id_forum_sujet`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `message-membre` FOREIGN KEY (`fk_membre`) REFERENCES `membres` (`id_membre`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `message-membre` FOREIGN KEY (`fk_membre`) REFERENCES `membres` (`id_membre`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `message-sujet` FOREIGN KEY (`fk_sujet`) REFERENCES `forum_sujet` (`id_forum_sujet`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `forum_sujet`
