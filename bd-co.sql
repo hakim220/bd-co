@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 3.5.1
 -- http://www.phpmyadmin.net
 --
--- Client :  127.0.0.1
--- Généré le :  Mer 18 Mars 2015 à 14:53
--- Version du serveur :  5.6.17
--- Version de PHP :  5.5.12
+-- Client: localhost
+-- Généré le: Jeu 19 Mars 2015 à 21:55
+-- Version du serveur: 5.5.24-log
+-- Version de PHP: 5.4.3
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,10 +17,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données :  `bd-co`
+-- Base de données: `bd-co`
 --
-CREATE DATABASE IF NOT EXISTS `bd-co` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `bd-co`;
 
 -- --------------------------------------------------------
 
@@ -52,6 +50,33 @@ INSERT INTO `actualite_seule` (`id_actualite_seule`, `fk_redacteur_article`, `ti
 (2, 1, 'Interview numero 1 ', 'images-photos/article2.png', '', 'ceci est la legende de la photo', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2015-03-19', 'images-photos/article2.png', 'interview'),
 (3, 2, 'Chronique numero 1', 'images-photos/article3.jpg', '', 'ceci est la legende de la photo', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2015-03-30', 'images-photos/article3.jpg', 'chronique'),
 (4, 2, 'Chronique numero 2', 'images-photos/article4.jpg', 'xxx', 'ceci est la legende de la photo', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2015-03-23', 'images-photos/article4.jpg', 'chronique');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `categories_forum`
+--
+
+DROP TABLE IF EXISTS `categories_forum`;
+CREATE TABLE IF NOT EXISTS `categories_forum` (
+  `id_categories_forum` int(11) NOT NULL,
+  `type` enum('actualites','bd','autres') DEFAULT NULL,
+  `designation_type` varchar(45) DEFAULT NULL,
+  `langue` enum('fr','en') DEFAULT NULL,
+  PRIMARY KEY (`id_categories_forum`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `categories_forum`
+--
+
+INSERT INTO `categories_forum` (`id_categories_forum`, `type`, `designation_type`, `langue`) VALUES
+(1, 'actualites', 'Actualités', 'fr'),
+(2, 'bd', 'Trouver une Bd', 'fr'),
+(3, 'autres', 'Divers', 'fr'),
+(4, 'actualites', 'News', 'en'),
+(5, 'bd', 'Find a Comic', 'en'),
+(6, 'autres', 'Other', 'en');
 
 -- --------------------------------------------------------
 
@@ -99,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `forum_message` (
   PRIMARY KEY (`id_forum_message`),
   KEY `message-sujet_idx` (`fk_sujet`),
   KEY `message-membre_idx` (`fk_membre`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
 
 --
 -- Contenu de la table `forum_message`
@@ -135,7 +160,11 @@ INSERT INTO `forum_message` (`id_forum_message`, `fk_sujet`, `fk_membre`, `pseud
 (27, 13, 7, 'user22', 'j''avais un probleme de cote, je teste si ça marche 214', '2015-03-08'),
 (28, 13, 7, 'user22', 'j''avais ce probleme, je ne l''ai plus...', '2015-03-08'),
 (29, 8, 7, 'user22', 'je  suis user 22', '2015-03-08'),
-(30, 8, 7, 'user22', 'kjkkhjihiok', '2015-03-08');
+(30, 8, 7, 'user22', 'kjkkhjihiok', '2015-03-08'),
+(31, 9, 7, 'user22', 'je teste si ça marche', '2015-03-08'),
+(35, 14, 7, 'user22', 'je fais un test avec les catégories', '2015-03-08'),
+(36, 15, 7, 'user22', 'je t''este l''a catégorie actualités 2145', '2015-03-08'),
+(37, 16, 7, 'user22', 'jdfkodnos', '2015-03-08');
 
 -- --------------------------------------------------------
 
@@ -148,29 +177,33 @@ CREATE TABLE IF NOT EXISTS `forum_sujet` (
   `id_forum_sujet` int(11) NOT NULL AUTO_INCREMENT,
   `fk_membre` int(11) NOT NULL,
   `sujet` varchar(255) DEFAULT NULL,
+  `categorie_sujet` enum('actualites','bd','autres') NOT NULL,
   `date_publication` date DEFAULT NULL,
   PRIMARY KEY (`id_forum_sujet`),
   KEY `forum-membre_idx` (`fk_membre`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
 -- Contenu de la table `forum_sujet`
 --
 
-INSERT INTO `forum_sujet` (`id_forum_sujet`, `fk_membre`, `sujet`, `date_publication`) VALUES
-(1, 5, 'Ou pouvons-nous trouver la Bd xxxxx', '2015-03-18'),
-(2, 5, 'test nouveau sujet', '2015-03-08'),
-(3, 5, 'test sujet 3', '2015-03-08'),
-(4, 5, 'sujet 4 de test ', '2015-03-08'),
-(5, 5, 'nouveau test', '2015-03-08'),
-(6, 5, 'blabla', '2015-03-08'),
-(7, 5, 'ererer', '2015-03-08'),
-(8, 6, 'monsieur x poste', '2015-03-08'),
-(9, 7, 'user 22 fait un test', '2015-03-08'),
-(10, 7, 'user 22 fait un test', '2015-03-08'),
-(11, 7, 'user 22 fait un test', '2015-03-08'),
-(12, 7, 'user 22 fait un test', '2015-03-08'),
-(13, 7, 'test avec cote', '2015-03-08');
+INSERT INTO `forum_sujet` (`id_forum_sujet`, `fk_membre`, `sujet`, `categorie_sujet`, `date_publication`) VALUES
+(1, 5, 'Ou pouvons-nous trouver la Bd xxxxx', 'actualites', '2015-03-18'),
+(2, 5, 'test nouveau sujet', 'autres', '2015-03-08'),
+(3, 5, 'test sujet 3', 'actualites', '2015-03-08'),
+(4, 5, 'sujet 4 de test ', 'actualites', '2015-03-08'),
+(5, 5, 'nouveau test', 'actualites', '2015-03-08'),
+(6, 5, 'blabla', 'actualites', '2015-03-08'),
+(7, 5, 'ererer', 'bd', '2015-03-08'),
+(8, 6, 'monsieur x poste', 'actualites', '2015-03-08'),
+(9, 7, 'user 22 fait un test', 'bd', '2015-03-08'),
+(10, 7, 'user 22 fait un test', 'actualites', '2015-03-08'),
+(11, 7, 'user 22 fait un test', 'bd', '2015-03-08'),
+(12, 7, 'user 22 fait un test', 'autres', '2015-03-08'),
+(13, 7, 'test avec cote', 'autres', '2015-03-08'),
+(14, 7, 'Catégorie bd', 'bd', '2015-03-08'),
+(15, 7, 'catégorie actu', 'actualites', '2015-03-08'),
+(16, 7, 'je teste divers', 'autres', '2015-03-08');
 
 -- --------------------------------------------------------
 
