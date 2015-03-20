@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Jeu 19 Mars 2015 à 21:55
+-- Généré le: Ven 20 Mars 2015 à 23:14
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -269,9 +269,9 @@ INSERT INTO `menu` (`id_menu`, `designation`, `lien`, `type`, `index_affichage`,
 (2, 'Boutique', 'boutique', 'principal', 2, 'fr'),
 (3, 'Evénements', 'evenements', 'principal', 3, 'fr'),
 (4, 'Forum', 'forum', 'principal', 4, 'fr'),
-(5, 'News', 'actualites_news', 'sous-menu', 1, 'fr'),
-(6, 'Chroniques', 'actualites_chroniques', 'sous-menu', 2, 'fr'),
-(7, 'Interviews', 'actualites_interviews', 'sous-menu', 3, 'fr');
+(5, 'News', 'actualites&categorie=news', 'sous-menu', 1, 'fr'),
+(6, 'Chroniques', 'actualites&categorie=chronique', 'sous-menu', 2, 'fr'),
+(7, 'Interviews', 'actualites&categorie=interview', 'sous-menu', 3, 'fr');
 
 -- --------------------------------------------------------
 
