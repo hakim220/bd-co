@@ -1,19 +1,46 @@
 <?php 
 
-// récupération des données de la table actualite seule et lien avec le redacteur de l'article
-	$sql = "SELECT * FROM actualite_seule
+// on teste si le parametre de la catégorie est présent pour filtrer les articles. Si il n'existe pas, on aura tous les articles
+	if(isset($_GET['categorie'])) {
+			
+		// ajout d'une condition au cas ou l'utilisateur modifie les parametre dans l'url
+		if($_GET['categorie'] == 'news' || $_GET['categorie'] == 'chronique' || $_GET['categorie'] == 'interview') {
+			$sql = "SELECT * FROM actualite_seule
+			INNER JOIN redacteur_actualite ON
+			fk_redacteur_article = id_redacteur_actualite
+			WHERE categorie_actualite = '$_GET[categorie]'
+			ORDER BY date_publication DESC "; // à voir une modification de la requete pour la langue
+		    $connexion_bdd = cree_connexion();
+		    $requete_actualites= requete($connexion_bdd, $sql);
+		    $actualites= retourne_tableau($requete_actualites);
+		}
+		else {
+			$sql = "SELECT * FROM actualite_seule
+			INNER JOIN redacteur_actualite ON
+			fk_redacteur_article = id_redacteur_actualite
+			ORDER BY date_publication DESC "; // à voir une modification de la requete pour la langue
+		    $connexion_bdd = cree_connexion();
+		    $requete_actualites = requete($connexion_bdd, $sql);
+		    $actualites = retourne_tableau($requete_actualites);
+		}
+		
+	}
+	else {
+		$sql = "SELECT * FROM actualite_seule
 	INNER JOIN redacteur_actualite ON
 	fk_redacteur_article = id_redacteur_actualite
-	ORDER BY date_publication DESC"; // à voir une modification de la requete pour la langue
+	ORDER BY date_publication DESC "; // à voir une modification de la requete pour la langue
     $connexion_bdd = cree_connexion();
-    $requete_toutes_actualites = requete($connexion_bdd, $sql);
-    $toutes_actualites = retourne_tableau($requete_toutes_actualites);
+    $requete_actualites = requete($connexion_bdd, $sql);
+    $actualites = retourne_tableau($requete_actualites);
+		
+	}
 	
 	
 	//var_dump($toutes_actualites);
   //var_dump($tous_evenements);
    
-   foreach($toutes_actualites as $actualite){
+   foreach($actualites as $actualite){
 	?>
 		<div class="une_actualite">
 			<div class="photo_miniature">

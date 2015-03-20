@@ -463,3 +463,40 @@ font-family:'allerlight';
     width: 129px;
 	float:right;
 }
+
+/*=========================
+ 	FORUM	
+=========================*/
+#forum .filtre {
+  	margin: 5px 2px;
+    padding: 4px 8px;
+}
+
+#forum a:first-child {
+	display: inline-block;
+    margin-bottom: 10px;
+}
+
+#forum {
+	width: auto;
+	margin: 0px auto 15px auto;
+	text-align:center;	
+}
+
+div.post-forum.block-border {
+	position:relative;
+}
+
+div.post-forum.block-border span {
+	font-style:italic;
+}
+
+div.post-forum.block-border a + br + span + br + span + span {
+  	position: absolute;
+    right: 10px;
+    top: 16px;
+    font-style:normal;
+}
+
+
+

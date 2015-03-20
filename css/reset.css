@@ -128,8 +128,7 @@ rouge : #D12323;
 }
 
 .block-border {
-	/*background-repeat: repeat-y;
-	background-image: url("../img-maquette/oblique-lines3.png");*/
+	/*background-repeat: repeat-y; background-image: url("../img-maquette/oblique-lines3.png");*/
 	-moz-box-shadow: 3px 3px 3px 0px #B2B2B2;
 	-webkit-box-shadow: 3px 3px 3px 0px #B2B2B2;
 	-o-box-shadow: 3px 3px 3px 0px #B2B2B2;
@@ -161,6 +160,12 @@ rouge : #D12323;
 	font-family: "quattrocento_sansregular";
 	font-weight:bold;
 	text-align: center;
+}
+
+.post-forum {
+	font-family: "quattrocento_sansregular";
+    margin-bottom: 30px;
+    padding: 15px 0px 15px 10px;
 }
 /*=================================
 			HEADER
@@ -338,8 +343,9 @@ header form[name="search"] + ul + ul + a:hover {
 ================================*/
 
 footer {
-	height:130px;
-	background:url("../img-maquette/pattern2.png"); /*margin-top:20px;*/
+	background: url("../img-maquette/pattern2.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 120px;
+    padding-top: 10px;
 }
 
 footer #footer-content {
@@ -369,13 +375,13 @@ footer #footer-content ul:first-child + p {
 }
 
 footer #footer-content ul:first-child + p + ul {
-	margin-left:389px;
-	margin-top:10px;
+ 	 margin-left: 341px;
+    margin-top: 17px;
 }
 
 footer #footer-content ul:first-child + p + ul li {
-	float:left;
-	margin:0px 5px;
+	float: left;
+    margin: 0 7px;
 }
 
 footer #footer-content ul:first-child + p + ul + p {
@@ -385,7 +391,7 @@ footer #footer-content ul:first-child + p + ul + p {
     font-size: 14px;
     font-weight: bold;
     line-height: 24px;
-    margin-top: -26px;
+    margin-top: -35px;
 }
 
 
