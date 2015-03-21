@@ -24,6 +24,7 @@
 	
 	
 	echo  $tous_messages[0]['sujet'] ;
+	echo  $tous_messages[0]['categorie_sujet'] ;
 ?>
 
 <a href="index.php?menu=forum">Retour au forum</a>
@@ -34,10 +35,10 @@
 		?>
 		<div class="un_evenement block-border">
 			<!-- <p><?php echo $un_message['avatar-img']; ?></p>  --> 
-			<p><?php echo $un_message['pseudo']; ?></p>
+			<p><?php echo $un_message['pseudo_membre']; ?></p>
 			<p><?php echo $un_message['message']; ?></p>
 			<p><?php echo $un_message['date_post']; ?></p>
-			</div>
+		</div>
 	<?php
 	}
 	
@@ -54,22 +55,24 @@
 
 <?php 
 	if(isset($_POST['reponse-forum'])) {
-		if($_SESSION['login'] == true) {
+		if($_POST['reponse']) {
+			if($_SESSION['login'] == true) {
 			$reponse = $_POST['reponse'];
 			$sujet = $_GET['sujet_forum'];
 					
 				
-			$sql3 = "INSERT INTO forum_message VALUES('','$sujet','$_SESSION[membre]','$reponse','2015-03-08')";
+			$sql3 = "INSERT INTO forum_message VALUES('','$sujet','$_SESSION[membre]','$_SESSION[pseudo]',\"$reponse\",'2015-03-08')";
 			requete($connexion_bdd, $sql3);
-		}	
-		else {
-		?>
-		<script>alert("il faut etre membre pour repondre");</script>
-		<?php
-			
+			}	
+			else {
+			?>
+			<script>alert("il faut etre membre pour repondre");</script>
+			<?php
+			}
 		}
-			
-		
+		else {
+			echo "Il faut remplir le champs";
+		}
 	}
 	
 ?>

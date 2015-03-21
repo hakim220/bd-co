@@ -12,13 +12,44 @@
 	la gestion du css => pas tout dans un fichier
 	le multilingue pour ce qui a �t� fait
 	la date qui apparait au mauvais format
-	faire des class CSS pour alleger le code
-	voir pour l'accessibilité du slider
+	faire des class CSS pour alleger le code  => ok
+	voir pour l'accessibilité du slider  =>  ok
 
 
 /*=========================
-	A faire
+	A faire avant la boutique
 ============================*/
 
-rajouter le partage sur les r�seaux sociaux pour les articles et evenemts
-gerer le menu dynamiquement en php
+rajouter le partage sur les r�seaux sociaux pour les articles et evenemts => à peaufiner
+gerer le menu dynamiquement en php  => ok
+
+-----
+
+css du forum => à peaufiner
+css des formulaires inscription/connexion/membre
+espace membre à faire 2/3 (info et post sur le forum) => ok
+actualté (1 fichier au lieu de 3) =>  ok
+changer le footer  => ok
+voir probleme de l'opacité du slider
+valider le code html & css
+
+
+
+evenement à remplacer par calendrier
+Multilingue à faire pour tout ce qui a maintenant !!!
+systeme de pagination pour les articles et pour le forum
+avatar des membres
+
+
+Gerer la date dynamiquement plus rendre la home page dynamique
+remplir la bdd avec 20 BD
+Faire un premier clean general
+
+
+----
+
+
+
+
+
+

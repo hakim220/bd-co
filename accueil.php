@@ -17,17 +17,11 @@
 							
 					?>
 					
-				  <li style="position: relative;"><a href="<?php echo $slide['lien_page']; ?>" target="_blank"><img src="<?php echo $slide['image']; ?>" alt=<?php echo $slide['attribut_alt_img']; ?>" /></a>
-				  	<div style="background: none repeat scroll 0 0 #000;
-    bottom: 0;
-    height: 51px;
-    opacity: 0.8;
-    padding: 5px 0 0 19px;
-    position: absolute;
-    width: 100%;">
+				  <li style="position: relative;"><a href="<?php echo $slide['lien_page']; ?>" target="_blank"><img src="<?php echo $slide['image']; ?>" alt="<?php echo $slide['attribut_alt_img']; ?>" /></a>
+				  	<div class="bandeau-slider">
     
-				  		<h3 class="couleur-blanche" style="font-family: allerregular; font-size: 16px; margin-bottom: 2px; font-weight: bold; opacity: 1;"><?php echo $slide['titre_slider']; ?></h3>
-				  		<p class="couleur-blanche" style="font-family: quattrocento_sansregular; font-size: 12px; font-weight: bold; opacity: 1;"><?php echo $slide['texte_complementaire']; ?></p>
+				  		<h3 class="couleur-blanche" style="font-family: allerregular; font-size: 18px; margin-bottom: 2px; font-weight: bold; opacity: 1;"><?php echo $slide['titre_slider']; ?></h3>
+				  		<p class="couleur-blanche" style="font-family: quattrocento_sansregular; font-size: 13px; font-weight: bold; opacity: 1;"><?php echo $slide['texte_complementaire']; ?></p>
 				  	</div>
 				  </li>
 				  <?php }?>
