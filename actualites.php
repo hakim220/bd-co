@@ -1,6 +1,56 @@
 <?php 
 
+
+$connexion_bdd = cree_connexion();
+/* systeme de pagination */
+
+// on récupére le nombre total de sujet
+$sql4 = "SELECT COUNT(id_actualite_seule) as nbrSujet FROM actualite_seule"; // il faudra ajouter la langue quand ça aura été actualisé dans la BDD
+$requete_nombre_sujet = requete($connexion_bdd, $sql4);
+$nombre_sujet = retourne_ligne($requete_nombre_sujet);
+
+
+//var_dump($nombre_sujet);
+$nbrSujet = $nombre_sujet['nbrSujet'];
+//echo $nbrSujet;
+
+// on veut 5 sujet par page
+$parPage = 4;
+//on arrondi au nombre supérieur pour éviter les nombres à virgule
+$nbrPages = ceil($nbrSujet/$parPage);
+if(isset($_GET['categorie'])) {
+	$sql5 = "SELECT COUNT(id_actualite_seule) as nbrSujet FROM actualite_seule WHERE categorie_actualite = '$_GET[categorie]'";
+	$requete_nombre_sujet = requete($connexion_bdd, $sql5);
+	$nombre_sujet = retourne_ligne($requete_nombre_sujet);
+	
+	$nbrSujet = $nombre_sujet['nbrSujet'];
+	$nbrPages = ceil($nbrSujet/$parPage);
+
+}
+
+
+
+echo $nbrPages;
+
+// on check sur quel page on se trouve pour afficher les article correspondant
+if(isset($_GET['page']) && $_GET['page'] >0 && $_GET['page'] <= $nbrPages) {
+	$pageCourante = $_GET['page'];
+}
+else {
+	$pageCourante = 1;
+}
+
+// fin pagination    ==> il faudra ajouter des where pour la langue !!!
+
+
+
+
+
+
+
+
 // on teste si le parametre de la catégorie est présent pour filtrer les articles. Si il n'existe pas, on aura tous les articles
+	
 	if(isset($_GET['categorie'])) {
 			
 		// ajout d'une condition au cas ou l'utilisateur modifie les parametre dans l'url
@@ -9,7 +59,8 @@
 			INNER JOIN redacteur_actualite ON
 			fk_redacteur_article = id_redacteur_actualite
 			WHERE categorie_actualite = '$_GET[categorie]'
-			ORDER BY date_publication DESC "; // à voir une modification de la requete pour la langue
+			ORDER BY date_publication DESC 
+			LIMIT ".(($pageCourante-1)*$parPage).", $parPage";; // à voir une modification de la requete pour la langue
 		    $connexion_bdd = cree_connexion();
 		    $requete_actualites= requete($connexion_bdd, $sql);
 		    $actualites= retourne_tableau($requete_actualites);
@@ -18,7 +69,8 @@
 			$sql = "SELECT * FROM actualite_seule
 			INNER JOIN redacteur_actualite ON
 			fk_redacteur_article = id_redacteur_actualite
-			ORDER BY date_publication DESC "; // à voir une modification de la requete pour la langue
+			ORDER BY date_publication DESC 
+			LIMIT ".(($pageCourante-1)*$parPage).", $parPage";; // à voir une modification de la requete pour la langue
 		    $connexion_bdd = cree_connexion();
 		    $requete_actualites = requete($connexion_bdd, $sql);
 		    $actualites = retourne_tableau($requete_actualites);
@@ -29,7 +81,8 @@
 		$sql = "SELECT * FROM actualite_seule
 	INNER JOIN redacteur_actualite ON
 	fk_redacteur_article = id_redacteur_actualite
-	ORDER BY date_publication DESC "; // à voir une modification de la requete pour la langue
+	ORDER BY date_publication DESC 
+	LIMIT ".(($pageCourante-1)*$parPage).", $parPage"; // à voir une modification de la requete pour la langue
     $connexion_bdd = cree_connexion();
     $requete_actualites = requete($connexion_bdd, $sql);
     $actualites = retourne_tableau($requete_actualites);
@@ -39,6 +92,14 @@
 	
 	//var_dump($toutes_actualites);
   //var_dump($tous_evenements);
+   
+   
+   
+   
+   
+   
+   
+   
    
    foreach($actualites as $actualite){
 	?>
@@ -57,6 +118,36 @@
 		</div>
 		
 	<?php
+	}
+   
+   
+   // affichage de la pagination
+	for ($i=1; $i <= $nbrPages  ; $i++) {
+			
+		if(isset($_GET['categorie'])) {
+			if($i == $pageCourante) {
+			// le numéro de la page courante n'est pas un lien clicable
+				echo $i;
+			}
+			else {
+				$categorie = $_GET['categorie'];
+				echo  "<a href=\"index.php?menu=actualites&categorie=$categorie&page=$i\">$i</a>";
+			
+			}	
+		} 
+		else {
+			if($i == $pageCourante) {
+			// le numéro de la page courante n'est pas un lien clicable
+				echo $i;
+			}
+			else {
+				echo  "<a href=\"index.php?menu=actualites&page=$i\">$i</a>";
+			
+			}	
+		}
+		
+			 
+		
 	}
 
  ?>

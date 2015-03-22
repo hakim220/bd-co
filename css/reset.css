@@ -51,6 +51,10 @@ a{
 	text-decoration:none;
 }
 
+input[type="submit"]:hover {
+	cursor: pointer;
+}
+
 /*
 Projet : Bd&cod
 Auteur : Hakim SOUSSI

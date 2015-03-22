@@ -52,19 +52,23 @@
 }
 ?>
 
-<form method="post" action="">
-	Pseudo<input type="text" name="pseudo"/>  <br/>
-	Civilité <br/>
-	Monsieur<input type="radio" name="civilite" value="monsieur" checked="checked"/>
-	Madame <input type="radio" name="civilite" value="madame"/>
-	<br/>
-	Nom<input type="text" name="nom"/>  <br/>
-	Prenom<input type="text" name="prenom"/>  <br/>
-	Mot de passe<input type="password" name="password"/>  <br/>
-	Repetez le mot de passe<input type="password" name="repeat-password"/>  <br/>
-	E-mail<input type="email" name="email"/>  <br/>
-	Repetez l'E-mail<input type="email" name="repeat-email"/>  <br/>
-	<input type="submit" name="bouton-inscription" value="Valider"/>
-</form>
+<div id="form_inscription" class="block-border">
+	<h2>Inscrivez-vous</h2>
+	<form method="post" action="">
+		<label for="pseudo">Pseudo</label><input id="pseudo" type="text" name="pseudo"/>  <br/>
+		<label>Civilité </label>
+		<label for="monsieur">Monsieur</label><input id="monsieur" type="radio" name="civilite" value="monsieur" checked="checked"/>
+		<label for="madame">Madame</label> <input id="madame" type="radio" name="civilite" value="madame"/>
+		<br/>
+		<label for="nom">Nom</label><input id="nom" type="text" name="nom"/>  <br/>
+		<label for="prenom">Prenom</label><input id="prenom" type="text" name="prenom"/>  <br/>
+		<label for="mdp">Mot de passe</label><input id="mdp" type="password" name="password"/>  <br/>
+		<label for="repeat-mdp">Repetez le mot de passe</label><input id="repeat-mdp" type="password" name="repeat-password"/>  <br/>
+		<label for="email">E-mail</label><input id="email" type="email" name="email"/>  <br/>
+		<label for"repeat">Repetez votre adresse E-mail</label><input id="repeat" type="email" name="repeat-email"/>  <br/>
+		<input type="submit" class="bouton-bleu" name="bouton-inscription" value="Valider"/>
+	</form>
 
-<p><a href="user-connecte.php?page=connexion">Je possede deja un compte</a></p>
+<p><a href="user-connecte.php?page=connexion" >Je possede deja un compte</a></p>
+	
+</div>

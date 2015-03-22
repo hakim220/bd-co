@@ -13,8 +13,8 @@
 				<li><a href="#"><img src="img-maquette/picto-twitter.png" alt="xx"/></a></li>
 				<li><a href="#"><img src="img-maquette/picto-google.png" alt="xx"/></a></li>
 				<li><a href="#"><img src="img-maquette/picto-pinterest.png" alt="xx"/></a></li>
-				<li><a href="#"><img src="img-maquette/picto-rss.png" alt="xx"/></a></li>
 				<li><a href="#"><img src="img-maquette/picto-tumblr.png" alt="xx"/></a></li>
+				<li><a href="#"><img src="img-maquette/picto-rss.png" alt="xx"/></a></li>
 			</ul>
 			<p>Nous Contacter  : <br/> 
 				

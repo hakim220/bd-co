@@ -51,13 +51,17 @@ if (isset($_GET['page']) && $_GET['page']=='connexion' ) {
 	
 ?>
 
-<form method="post" action="">
-	Email<input type="email" name="email"/>  <br/>
-	Mot de passe<input type="password" name="password"/> <br/>
-	<input type="submit" name="bouton-connexion"/>
-</form>
 
-<p><a href="index.php?menu=inscription">Pas encore membre </a></p>
+<div id="form_connexion" class="block-border">
+	<h2>Connectez-vous</h2>
+	<form method="post" action="">
+		<label for="email">Email</label><input id="email" type="email" name="email"/>  <br/>
+		<label for="mdp"> Mot de passe</label><input id="mdp" type="password" name="password"/> <br/>
+		<input type="submit" class="bouton-bleu" value="valider" name="bouton-connexion"/>
+	</form>
+	
+	<p><a href="index.php?menu=inscription">Pas encore membre </a></p>
+</div>
 <?php 
 }else {
 	// si on est sur toutes les autres pages, on affiche rien...
