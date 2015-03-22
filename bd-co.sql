@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Ven 20 Mars 2015 à 23:14
+-- Généré le: Dim 22 Mars 2015 à 23:43
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -235,13 +235,13 @@ CREATE TABLE IF NOT EXISTS `membres` (
 --
 
 INSERT INTO `membres` (`id_membre`, `pseudo`, `civilite`, `nom`, `prenom`, `courriel`, `password`, `avatar-img`, `adresse`, `code_postal`, `ville`, `adresse_livraison`, `code_postal_livraison`, `ville_livraison`) VALUES
-(1, 'jack22', 'monsieur', 'Jack', 'Mickael', 'jack@gmail.com', 'blabla', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, 'fgfg', 'monsieur', 'ffff', 'ggggggggg', 'g@gmail.com', 'ggggg', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 'utilisateur', 'madame', 'malo', 'laurie', 'laur@gmail.com', 'lala', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 'utilisateur', 'madame', 'sachot', 'Milene', 'mil@gmail.com', '12345', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, 'test', 'monsieur', 'Max', 'Martin', 'k@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 'Monsieur P', 'monsieur', 'monsieur', 'ppp', 'p@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, 'user22', 'monsieur', 'user', 'usero', 'user22@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(1, 'user44', 'madame', 'Croft', 'Lara', 'lara@gmail.com', 'blabla', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 'user_du_31', 'monsieur', 'Mich', 'El', 'l@gmail.com', 'ggggg', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 'user88', 'monsieur', 'Bobo', 'Rista', 'rista@gmail.com', 'lala', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 'fat8', 'madame', 'Lili', 'Loula', 'lil@gmail.com', '12345', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(5, 'testotu', 'monsieur', 'maxime', 'laurot', 'max@gmail.com', 'ab56b4d92b40713acc5af89985d4b786', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, 'rr', 'monsieur', 'Msi', 'Marc', 'm@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, 'Prt88', 'monsieur', 'Prati', 'Que', 'ma@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
