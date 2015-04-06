@@ -57,10 +57,10 @@ if (isset($_GET['page']) && $_GET['page']=='connexion' ) {
 	<form method="post" action="">
 		<label for="email">Email</label><input id="email" type="email" name="email"/>  <br/>
 		<label for="mdp"> Mot de passe</label><input id="mdp" type="password" name="password"/> <br/>
-		<input type="submit" class="bouton-bleu" value="valider" name="bouton-connexion"/>
+		<input type="submit" class="bouton-bleu" value="Connexion" name="bouton-connexion"/>
 	</form>
 	
-	<p><a href="index.php?menu=inscription">Pas encore membre </a></p>
+	<p><a href="index.php?menu=inscription">Pas encore membre ?</a></p>
 </div>
 <?php 
 }else {

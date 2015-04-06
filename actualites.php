@@ -14,7 +14,7 @@ $nombre_sujet = retourne_ligne($requete_nombre_sujet);
 $nbrSujet = $nombre_sujet['nbrSujet'];
 //echo $nbrSujet;
 
-// on veut 5 sujet par page
+// on veut 4 sujet par page
 $parPage = 4;
 //on arrondi au nombre supérieur pour éviter les nombres à virgule
 $nbrPages = ceil($nbrSujet/$parPage);
@@ -127,21 +127,21 @@ else {
 		if(isset($_GET['categorie'])) {
 			if($i == $pageCourante) {
 			// le numéro de la page courante n'est pas un lien clicable
-				echo $i;
+				echo "<span class=\"numerotation numerotation-active\">$i</span>";
 			}
 			else {
 				$categorie = $_GET['categorie'];
-				echo  "<a href=\"index.php?menu=actualites&categorie=$categorie&page=$i\">$i</a>";
+				echo  "<span class=\"numerotation\"><a href=\"index.php?menu=actualites&categorie=$categorie&page=$i\">$i</a></span>";
 			
 			}	
 		} 
 		else {
 			if($i == $pageCourante) {
 			// le numéro de la page courante n'est pas un lien clicable
-				echo $i;
+				echo "<span class=\"numerotation numerotation-active\">$i</span>";
 			}
 			else {
-				echo  "<a href=\"index.php?menu=actualites&page=$i\">$i</a>";
+				echo  "<span class=\"numerotation\"><a href=\"index.php?menu=actualites&page=$i\">$i</a></span>";
 			
 			}	
 		}

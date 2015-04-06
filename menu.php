@@ -55,8 +55,9 @@
 			</ul>
 				</nav>
 				<div id="block_droite">
-					<form method="post" name="search">
-						<input type="search" name="barre_recherche" placeholder="Entrez le nom d'une BD"/>
+					<!--on met le form en get pour avoir les mots tapés dans l'url au cas ou on aimerait partager celle-ci -->
+					<form method="get" name="search" action="search.php">
+						<input type="text" name="barre_recherche" placeholder="Entrez le nom d'une BD"/>
 						<input type="submit" name="valider_recherche" class=""  value=""/>
 					</form>
 					<ul>
@@ -79,6 +80,6 @@
 					</ul>
 					<!-- il faudra ajouter le ul-li "mon compte/deconnexion" quand l'utilisateur est connecté... -->
 					
-					<a class="bouton-bleu">Panier</a>
+					<a class="bouton-bleu" href="panier.php">Panier</a>
 				</div>
 			</div> <!--fin header content-->

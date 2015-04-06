@@ -4,7 +4,6 @@
 #content_home_page #slider {
  	clear: both;
     margin-left: -20px;
-    margin-top: -16px;
     width: 1024px;
 }
 
@@ -497,12 +496,117 @@ div.post-forum.block-border a + br + span + br + span + span {
     font-style:normal;
 }
 
+/*==========================
+	UN SUJET DU FORUM 
+======================*/
+
+#content_forum_sujet .un_post_forum div {
+	float: left;
+}
+
+#content_forum_sujet .un_post_forum div p {
+	text-align: center;
+}
+
+#content_forum_sujet .un_post_forum div + p {
+	display: inline-block;
+	margin:15px 0px 0px 15px;
+}
+
+#content_forum_sujet .un_post_forum div + p + p {
+	position: absolute;
+	bottom: 5px;
+	right: 15px;
+	font-style: italic;
+}
+
+#content_forum_sujet h2 {
+	text-align: center;
+	font-size: 25px;
+	font-family:'allerregular';
+}
+
+#content_forum_sujet form {
+	display : inline-block;
+}
+
+
+#content_forum_sujet textarea {
+	border:2px solid #282828;
+	width: 500px;
+	max-width: 500px;
+	height:85px;
+	max-height: 200px;
+	margin-bottom : 5px;
+}
+
+#content_forum_sujet .un_post_forum + span + br + p {
+	font-size: 15px;
+	font-family:'allerregular';
+	margin:10px 0px;
+}
+
+#content_forum_sujet input[type="submit"] {
+	padding: 3px 4px;
+}
+
+/*================================
+ 	Nouveau sujet sur le forum
+=================================*/
+#content_nouveau_sujet_forum {
+    font-family: 'quattrocento_sansregular';
+    width: 600px;
+    margin : 30px auto 0px auto;
+    padding: 20px 30px;
+}
+
+#content_nouveau_sujet_forum h2 {
+	text-align:center;
+	font-family:'allerregular';
+	font-size: 20px;
+	margin-bottom : 20px;
+}
+
+#content_nouveau_sujet_forum form label {
+	display: block;
+    width: 200px;
+    float: left;
+    margin-bottom:5px;
+}
+
+#content_nouveau_sujet_forum form label[for="message"] {
+	margin-top: 9px;
+}
+
+#content_nouveau_sujet_forum form select {
+	width: 207px;
+	border: 2px solid #282828;
+}
+
+
+#content_nouveau_sujet_forum form input[type="text"],
+#content_nouveau_sujet_forum form textarea {
+	border: 2px solid #282828;
+	width: 200px;
+}
+
+#content_nouveau_sujet_forum form textarea {
+	margin : 10px 0px;
+}
+#content_nouveau_sujet_forum form input[type="submit"] {
+    margin: 20px auto;
+	display:block;
+    padding: 3px 4px;
+}
+
+/*================================================
+ 		PAGE DE CONNEXION & PAGE INSCRIPTION
+=================================================*/
 
 /*A nettoyer connexion et inscription => réduire le CSS*/
 
-/*==========================
- 	PAGE DE CONNEXION
-==========================*/
+/* Connexion */
+
 #form_connexion {
 	width:300px;
 	margin:0px auto;
@@ -510,7 +614,8 @@ div.post-forum.block-border a + br + span + br + span + span {
 	padding: 20px 30px;
 }
 
-#form_connexion h2 {
+#form_connexion h2,
+#form_inscription h2 {
 	text-align:center;
 	font-size:20px;
 	font-family: 'allerregular';
@@ -540,28 +645,20 @@ div.post-forum.block-border a + br + span + br + span + span {
     width: 100px;
 }
 
-#form_connexion p {
+#form_connexion p,
+#form_inscription p  {
 	text-align:center;
 	text-decoration:underline;
 }
 
-/*==========================
- 	PAGE INSCRIPTION
-==========================*/
+/* Inscription */
+
 #form_inscription {
 	width:500px;
 	margin:0px auto;
 	font-family : 'quattrocento_sansregular';
 	padding: 20px 30px;
 }
-
-#form_inscription h2 {
-	text-align:center;
-	font-size:20px;
-	font-family: 'allerregular';
-	margin-bottom:20px;
-}
-
 
 #form_inscription label {
     display: block;
@@ -582,7 +679,7 @@ div.post-forum.block-border a + br + span + br + span + span {
 }
 
 #form_inscription input[type="submit"] {
-display: block;
+	display: block;
     height: 30px;
     margin: 10px auto;
     width: 100px;
@@ -594,15 +691,12 @@ display: block;
 	width:168px;
 }
 
-#form_inscription p {
-	text-align:center;
-	text-decoration:underline;
-}
-
-
 /*==========================
 	ESPACE MEMBRES
 ===========================*/
+#membre_content {
+	padding: 20px 0px;
+}
 
 #membre_content h2 {
 	text-align:center;
@@ -631,11 +725,18 @@ display: block;
 	margin-top:15px;
 }
 
+
+
 /*===========================================
 	ESPACE MEMBRES  => modifier les infos
 ============================================*/ 
+#membre_content #infos_membre,
+#membre_content #posts_forum {
+	 margin: 0 auto;
+    width: 415px;
+}
+
 #content_modif_info {
-	text-align:center;
 	padding : 10px 0px;
 }
 #content_modif_info h2 {
@@ -646,17 +747,26 @@ display: block;
 }
 
 #content_modif_info label {
-	display: block;
-    width: 220px;
-    float: left;	
+ 	display: block;
+    float: left;
+    width: 150px;	
 }
 
 #content_modif_info select {
 	 width: 142px;
 }
 
+#content_modif_info div {
+	width: 400px;
+	margin: 0px auto;
+}
+
 
 /*modif mdp*/
+
+#modif-mdp {
+	padding: 20px 0px;
+}
 
 #modif-mdp h2 {
 	text-align:center;
@@ -669,5 +779,170 @@ display: block;
 		display: block;
     width: 250px;
     float: left;
+}
+
+#modif-mdp div {
+	width: 400px;
+	margin: 0px auto;
+}
+
+
+/*========================
+	BOUTIQUE 
+=========================*/
+#les_filtres {
+	width:250px;
+	display:inline-block;
+	vertical-align : top;
+}
+#les_bd {
+	width:700px;
+	display: inline-block;
+	vertical-align : top;
+}
+
+#les_bd .produit {
+	display:inline-block;
+	vertical-align:top;
+	width:220px;
+	margin-bottom:20px;
+	text-align:center;
+}
+
+#les_bd .produit a{
+	padding:3px 2px;
+}
+
+#les_bd .produit p {
+	margin:10px 0px;
+}
+
+/*========================
+	FICHE PRODUIT (boutique)
+=========================*/
+#content_fiche_produit {
+	 font-family: 'quattrocento_sansregular';
+}
+
+#content_fiche_produit .photos {
+	display: inline-block;
+	vertical-align: top;
+	width: 255px;
+}
+
+#content_fiche_produit .informations_bd {
+	display: inline-block;
+	vertical-align: top;
+	width: 695px;
+	margin-left: 20px;	
+}
+
+#content_fiche_produit .informations_bd div:first-child {
+	border : 2px solid #282828;
+	padding : 5px;
+	margin-bottom : 20px;
+}
+
+#content_fiche_produit .informations_bd div:first-child h1 {
+	font-size:30px;
+	font-family: 'allerregular';
+}
+
+#content_fiche_produit .informations_bd div:first-child ul li,
+#content_fiche_produit .informations_bd div:first-child p {
+	line-height: 25px;
+}
+
+#content_fiche_produit .informations_bd div:last-child {
+	padding-left: 5px;
+}
+
+#content_fiche_produit .informations_bd div:last-child p {
+	margin-bottom:13px;
+}
+
+#content_fiche_produit .informations_bd div:last-child a {
+	padding : 4px 2px;
+	display: inline-block;
+}
+
+
+
+#content_fiche_produit .resume_bd {
+	border : 2px solid #282828;
+	padding : 5px;
+	margin : 15px 0px;
+}
+
+#content_fiche_produit .resume_bd h2 {
+	margin-bottom : 5px;
+	font-size: 18px;
+	font-family: 'allerregular';
+}
+
+
+#content_fiche_produit .bd_complementaire {
+	border : 2px solid #282828;
+	padding : 5px 10px 15px 10px;
+}
+
+#content_fiche_produit .bd_complementaire h2 {
+	margin-bottom : 5px;
+	font-size: 18px;
+	font-family: 'allerregular';
+	text-align: center;
+}
+
+#content_fiche_produit .bd_complementaire .produit_complementaire {
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+}
+
+#content_fiche_produit .bd_complementaire h2 + div + div   {
+	margin : 0px 245px ;
+}
+
+#content_fiche_produit .bd_complementaire .produit_complementaire img {
+	margin-bottom: 10px;
+}
+
+#content_fiche_produit .bd_complementaire .produit_complementaire a {
+	margin: 0px auto;
+}
+
+/*========================
+	PANIER
+=========================*/
+.content_panier table,
+.content_panier table th
+.content_panier table tr,
+.content_panier table  td{
+	border : 2px solid #282828;
+}
+
+.content_panier table {
+	width: 974px;
+}
+
+
+#page_panier .recap_livraison {
+	border : 2px solid #282828;
+	float: left;
+	padding : 5px 10px;
+}
+
+#page_panier .recap_prix {
+	border : 2px solid #282828;
+	float: right;
+	padding : 5px 10px;
+}
+
+#page_panier div.clear  p {
+	float: left;
+}
+
+#page_panier div.clear + p + br + p {
+	float: right;
 }
 

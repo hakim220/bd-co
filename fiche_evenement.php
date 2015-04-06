@@ -1,5 +1,5 @@
 <?php
-
+/*
 // récupération des données de la table evenements
 	$sql = "SELECT * FROM evenements WHERE id_evenement= '$_GET[event]' AND langue = '$langue'";
     $connexion_bdd = cree_connexion();
@@ -25,5 +25,5 @@
 	
 	
 
-   
+   */
  ?>

@@ -121,21 +121,21 @@ echo "</div>";
 		if(isset($_GET['categorie'])) {
 			if($i == $pageCourante) {
 			// le numéro de la page courante n'est pas un lien clicable
-				echo $i;
+				echo "<span class=\"numerotation numerotation-active\"> $i </span>";
 			}
 			else {
 				$categorie = $_GET['categorie'];
-				echo  "<a href=\"index.php?menu=forum&categorie=$categorie&page=$i\">$i</a>";
+				echo  "<span class=\"numerotation\"><a href=\"index.php?menu=forum&categorie=$categorie&page=$i\">$i</a></span>";
 			
 			}	
 		} 
 		else {
 			if($i == $pageCourante) {
 			// le numéro de la page courante n'est pas un lien clicable
-				echo $i;
+				echo "<span class=\"numerotation numerotation-active\"> $i </span>";
 			}
 			else {
-				echo  "<a href=\"index.php?menu=forum&page=$i\">$i</a>";
+				echo  "<span class=\"numerotation\"><a href=\"index.php?menu=forum&page=$i\">$i</a> </span>";
 			
 			}	
 		}

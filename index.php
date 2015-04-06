@@ -46,7 +46,11 @@ else {
 // Les header HTML sont chargés à part pour être un minimum dynamique
 include "header.php";
 
-var_dump($_SESSION['login']);
+
+// var_dump($_SESSION['login']); ce var_dump sert à voir si l'utilisateur est connecté
+
+
+
 // Les header HTML sont chargés à part pour être un minimum dynamique
 
 
@@ -116,7 +120,18 @@ if(isset($_GET['sujet_forum'])) {
 	}
 }
 
+// redirection vers la bonne fiche produit
 
+if(isset($_GET['fiche_produit'])) {
+    $contenu = 'fiche_produit';
+	
+	if(is_numeric($_GET['fiche_produit']) == true &&  strpbrk($_GET['fiche_produit'], '.') ==false ) {
+		$forum_sujet = $_GET['fiche_produit'];
+	}
+	else {
+		$fiche_produit = 1;
+	}
+}
 
 
 

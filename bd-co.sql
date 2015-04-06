@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Dim 22 Mars 2015 à 23:43
+-- Généré le: Lun 06 Avril 2015 à 22:38
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -54,6 +54,59 @@ INSERT INTO `actualite_seule` (`id_actualite_seule`, `fk_redacteur_article`, `ti
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `article`
+--
+
+DROP TABLE IF EXISTS `article`;
+CREATE TABLE IF NOT EXISTS `article` (
+  `id_article` int(11) NOT NULL,
+  `prix_unitaire` float NOT NULL,
+  `stock` float NOT NULL,
+  PRIMARY KEY (`id_article`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `article`
+--
+
+INSERT INTO `article` (`id_article`, `prix_unitaire`, `stock`) VALUES
+(1, 10, 20),
+(2, 9.99, 10),
+(3, 10, 10),
+(4, 15, 10),
+(5, 14, 10),
+(6, 17, 10),
+(7, 14, 10),
+(8, 13.99, 20),
+(9, 12, 10),
+(10, 17, 20),
+(11, 12, 10),
+(12, 14, 30);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `auteur_bd`
+--
+
+DROP TABLE IF EXISTS `auteur_bd`;
+CREATE TABLE IF NOT EXISTS `auteur_bd` (
+  `id_auteur_bd` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_auteur` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id_auteur_bd`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `auteur_bd`
+--
+
+INSERT INTO `auteur_bd` (`id_auteur_bd`, `nom_auteur`) VALUES
+(1, 'Auteur a'),
+(2, 'Auteur b');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `categories_forum`
 --
 
@@ -77,6 +130,46 @@ INSERT INTO `categories_forum` (`id_categories_forum`, `type`, `designation_type
 (4, 'actualites', 'News', 'en'),
 (5, 'bd', 'Find a Comic', 'en'),
 (6, 'autres', 'Other', 'en');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `designation_article`
+--
+
+DROP TABLE IF EXISTS `designation_article`;
+CREATE TABLE IF NOT EXISTS `designation_article` (
+  `id_designation_article` int(11) NOT NULL AUTO_INCREMENT,
+  `fk_article` int(11) NOT NULL,
+  `fk_genre_bd` int(11) NOT NULL,
+  `fk_serie_bd` int(11) NOT NULL,
+  `designation` varchar(100) NOT NULL,
+  `lien_photo` varchar(100) NOT NULL,
+  `date_parution` date NOT NULL,
+  `resume` varchar(500) NOT NULL,
+  `nombre_page` varchar(100) NOT NULL,
+  `ena` varchar(50) NOT NULL,
+  `langue` enum('fr','en') NOT NULL,
+  PRIMARY KEY (`id_designation_article`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+
+--
+-- Contenu de la table `designation_article`
+--
+
+INSERT INTO `designation_article` (`id_designation_article`, `fk_article`, `fk_genre_bd`, `fk_serie_bd`, `designation`, `lien_photo`, `date_parution`, `resume`, `nombre_page`, `ena`, `langue`) VALUES
+(1, 1, 1, 1, 'Tintin', 'images-photos/bd_ventes/bd1.jpg', '2015-03-01', 'voici le resumé de la bd', '120', '584815945248', 'fr'),
+(2, 2, 1, 2, 'Golden dogs', 'images-photos/bd_ventes/bd2.jpg', '2015-03-06', 'voici un résumé xxxxx', '80', '5887859555', 'fr'),
+(3, 3, 2, 2, 'Buffalo Bunner', 'images-photos/bd_ventes/bd3.jpg', '2015-03-26', 'voici le résumé xxxxxxx', '90', '478562', 'fr'),
+(4, 4, 3, 3, 'Les promeneurs', 'images-photos/bd_ventes/bd-13.jpg', '2015-03-20', 'dpsfk,sgfopskofd sjpodfs dfo sofkgsko', '50', '147596', 'fr'),
+(5, 5, 1, 4, 'Bob Morane', 'images-photos/bd_ventes/bd-4.jpg', '2015-03-27', 'voici un résumé xxxxxx', '40', '5987624', 'fr'),
+(6, 6, 2, 5, 'dick herisson', 'images-photos/bd_ventes/bd-5.jpg', '2015-04-05', 'bd xxxx kjzpjer idpjfzjpisf pzijerpjizerjpepjzir', '78', '123456', 'fr'),
+(7, 7, 3, 6, 'Chocolat vanilla', 'images-photos/bd_ventes/bd-6.jpg', '2015-03-28', 'voici le réumé blabla', '80', '123456', 'fr'),
+(8, 8, 5, 7, 'Savage Dragon', 'images-photos/bd_ventes/bd-7.jpg', '2015-03-28', 'voici un résumé blablabla', '74', '123456', 'fr'),
+(9, 9, 6, 7, 'Kinsman', 'images-photos/bd_ventes/bd-8.jpg', '2015-04-13', 'voivi un résumé blablablabla....', '75', '123456', 'fr'),
+(10, 10, 4, 8, 'Carthago', 'images-photos/bd_ventes/bd-9.jpg', '2015-04-12', 'voici un résumé', '75', '123456', 'fr'),
+(11, 11, 5, 9, 'Le reve du requin', 'images-photos/bd_ventes/bd-10.jpg', '2015-04-10', 'voici un résumé', '47', '123456789', 'fr'),
+(12, 12, 6, 10, 'Centarus numéro 2', 'images-photos/bd_ventes/bd-11.jpg', '2015-05-10', 'voici un résumé de la bd', '32', '123456', 'fr');
 
 -- --------------------------------------------------------
 
@@ -208,6 +301,51 @@ INSERT INTO `forum_sujet` (`id_forum_sujet`, `fk_membre`, `sujet`, `categorie_su
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `genre_bd`
+--
+
+DROP TABLE IF EXISTS `genre_bd`;
+CREATE TABLE IF NOT EXISTS `genre_bd` (
+  `id_genre_bd` int(11) NOT NULL,
+  `genre_bd` enum('aventure','histoire','thriller/suspence','western','fantastique','enfant','grand enfant','ado') DEFAULT NULL,
+  `designation` varchar(100) DEFAULT NULL,
+  `langue` enum('fr','en') DEFAULT NULL,
+  PRIMARY KEY (`id_genre_bd`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `genre_bd`
+--
+
+INSERT INTO `genre_bd` (`id_genre_bd`, `genre_bd`, `designation`, `langue`) VALUES
+(1, 'aventure', 'aventure', 'fr'),
+(2, 'histoire', 'histoire', 'fr');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `liste_auteur_bd`
+--
+
+DROP TABLE IF EXISTS `liste_auteur_bd`;
+CREATE TABLE IF NOT EXISTS `liste_auteur_bd` (
+  `id_liste_auteur_bd` int(11) NOT NULL AUTO_INCREMENT,
+  `fk_auteur_bd` int(11) NOT NULL,
+  `fk_designation_article` int(11) NOT NULL,
+  PRIMARY KEY (`id_liste_auteur_bd`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `liste_auteur_bd`
+--
+
+INSERT INTO `liste_auteur_bd` (`id_liste_auteur_bd`, `fk_auteur_bd`, `fk_designation_article`) VALUES
+(1, 1, 1),
+(2, 2, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `membres`
 --
 
@@ -220,7 +358,7 @@ CREATE TABLE IF NOT EXISTS `membres` (
   `prenom` varchar(100) DEFAULT NULL,
   `courriel` varchar(100) DEFAULT NULL,
   `password` varchar(100) NOT NULL,
-  `avatar-img` varchar(100) DEFAULT NULL,
+  `avatar_img` varchar(200) DEFAULT NULL,
   `adresse` varchar(255) DEFAULT NULL,
   `code_postal` varchar(100) DEFAULT NULL,
   `ville` varchar(100) DEFAULT NULL,
@@ -228,20 +366,24 @@ CREATE TABLE IF NOT EXISTS `membres` (
   `code_postal_livraison` varchar(100) DEFAULT NULL,
   `ville_livraison` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_membre`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Contenu de la table `membres`
 --
 
-INSERT INTO `membres` (`id_membre`, `pseudo`, `civilite`, `nom`, `prenom`, `courriel`, `password`, `avatar-img`, `adresse`, `code_postal`, `ville`, `adresse_livraison`, `code_postal_livraison`, `ville_livraison`) VALUES
-(1, 'user44', 'madame', 'Croft', 'Lara', 'lara@gmail.com', 'blabla', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, 'user_du_31', 'monsieur', 'Mich', 'El', 'l@gmail.com', 'ggggg', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 'user88', 'monsieur', 'Bobo', 'Rista', 'rista@gmail.com', 'lala', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 'fat8', 'madame', 'Lili', 'Loula', 'lil@gmail.com', '12345', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, 'testotu', 'monsieur', 'maxime', 'laurot', 'max@gmail.com', 'ab56b4d92b40713acc5af89985d4b786', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 'rr', 'monsieur', 'Msi', 'Marc', 'm@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, 'Prt88', 'monsieur', 'Prati', 'Que', 'ma@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `membres` (`id_membre`, `pseudo`, `civilite`, `nom`, `prenom`, `courriel`, `password`, `avatar_img`, `adresse`, `code_postal`, `ville`, `adresse_livraison`, `code_postal_livraison`, `ville_livraison`) VALUES
+(1, 'user44', 'madame', 'Croft', 'Lara', 'lara@gmail.com', 'blabla', 'images-photos/avatars/avatar-base.png', NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 'user_du_31', 'monsieur', 'Mich', 'El', 'l@gmail.com', 'ggggg', 'images-photos/avatars/avatar-base.png', NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 'user88', 'monsieur', 'Bobo', 'Rista', 'rista@gmail.com', 'lala', 'images-photos/avatars/avatar-base.png', NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 'fat8', 'madame', 'Lili', 'Loula', 'lil@gmail.com', '12345', 'images-photos/avatars/avatar-base.png', NULL, NULL, NULL, NULL, NULL, NULL),
+(5, 'testotuo', 'monsieur', 'maxime', 'laurot', 'max@gmail.com', 'ab56b4d92b40713acc5af89985d4b786', 'images-photos/avatars/avatar-testotuo.png', '19 rue du 18 juin', 'gagny', '93220', '19 rue du 18 juin', 'gagny', '93220'),
+(6, 'rr', 'monsieur', 'Msi', 'Marc', 'm@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'images-photos/avatars/avatar-base.png', NULL, NULL, NULL, NULL, NULL, NULL),
+(7, 'Prt88', 'monsieur', 'Prati', 'Que', 'ma@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'images-photos/avatars/avatar-base.png', NULL, NULL, NULL, NULL, NULL, NULL),
+(8, NULL, 'monsieur', NULL, NULL, 'hakim@gmail.com', '1234', 'images-photos/avatars/avatar-base.png', NULL, NULL, NULL, NULL, NULL, NULL),
+(9, NULL, 'monsieur', NULL, NULL, 'hakim2@gmail.com', '1234', 'images-photos/avatars/avatar-base.png', NULL, NULL, NULL, NULL, NULL, NULL),
+(10, '', 'monsieur', 'user', 'nom', 'user555@gmail.com', '12345', '', '14 rue du parc', '06000', 'Nice', '14 rue du parc', '06000', 'Nice'),
+(11, NULL, 'monsieur', NULL, NULL, 'kako@gmail.com', 'abcde', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -298,6 +440,27 @@ CREATE TABLE IF NOT EXISTS `redacteur_actualite` (
 INSERT INTO `redacteur_actualite` (`id_redacteur_actualite`, `nom`, `prenom`, `photo_redacteur`, `alt_photo_redacteur`, `resume`, `email`) VALUES
 (1, 'Dupont', 'Martin', 'images-photos/auteur1.jpg', '', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'auteur1@gmail.com'),
 (2, 'Loubet', 'Sarah', 'images-photos/auteur2.jpg', '', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'loubet-s@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `series_bd`
+--
+
+DROP TABLE IF EXISTS `series_bd`;
+CREATE TABLE IF NOT EXISTS `series_bd` (
+  `id_series_bd` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_serie` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id_series_bd`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `series_bd`
+--
+
+INSERT INTO `series_bd` (`id_series_bd`, `nom_serie`) VALUES
+(1, 'Thorgal'),
+(2, 'Golden');
 
 -- --------------------------------------------------------
 

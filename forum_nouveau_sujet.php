@@ -1,6 +1,4 @@
 
-
-
 <?php 
 if(isset($_POST['publier_forum'])) {
 
@@ -21,11 +19,9 @@ if(isset($_POST['publier_forum'])) {
 		
 			$last_id = array_values($ligne);
 		
-		//
-		
+		//		
 			$sql2 = "INSERT INTO forum_message VALUES('','$last_id[0]','$_SESSION[membre]','$_SESSION[pseudo]',\"$message\",'2015-03-08')";
-			requete($connexion_bdd, $sql2);
-		
+			requete($connexion_bdd, $sql2);	
 		}
 		else {
 		?>
@@ -38,16 +34,18 @@ if(isset($_POST['publier_forum'])) {
 	}
 }
 
-
 ?>
-
-<form method="post" action="">
-	titre du sujet <input type="text"  name="titre_sujet"/>  <br/>
-	Votre message<textarea name="message"></textarea> <br/>
-	Catégorie du message <select name="categorie_sujet">
-		<option value="actualites">Actualités</option>
-		<option value="bd">Trouver une BD</option>
-		<option value="autres">Divers</option>
-	</select>
-		<input type="submit" name="publier_forum"/>
-</form>
+<div id="content_nouveau_sujet_forum" class="block-border">
+	<h2>Poster un sujet sur le forum</h2>
+	<form method="post" action="">
+		<label for="titre_sujet">Titre du sujet</label> <input id="titre_sujet" type="text"  name="titre_sujet"/>  <br/>
+		<label for="message">Votre message</label><textarea id="message" name="message"></textarea> <br/>
+		<label for="categorie_message">Catégorie du message</label>  
+		<select name="categorie_sujet" id="categorie_message">
+			<option value="actualites">Actualités</option>
+			<option value="bd">Trouver une BD</option>
+			<option value="autres">Divers</option>
+		</select> <br/>
+		<input type="submit" name="publier_forum" class="bouton-bleu"/>
+	</form>
+</div> <!-- fin content_nouveau_sujet_forum --> 

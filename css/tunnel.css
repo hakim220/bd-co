@@ -1,0 +1,160 @@
+/*=========================
+   Styles du tunnel de vente
+ ========================*/
+
+/*header du tunnel de vente*/
+
+#logo  {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#logo + h2 {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 30px;
+	color: #fff;
+	font-family: 'allerregular';
+	margin-left:150px;
+	margin-top:80px;
+}
+
+#logo + h2 + div {
+	display: inline-block;
+	vertical-align: top;
+	float:right;
+	margin-top:80px;
+}
+
+#logo + h2 + div a {
+	padding: 3px 4px;
+}
+
+/*fin  du header du tunnel de vente*/
+
+.etape_en_cours {
+	font-weight: bold;
+}
+
+.autre_etape {
+	opacity: 0.5;
+}
+
+.etape {
+	margin-bottom:80px;
+}
+
+.etape ul li {
+	float: left;
+	font-size:27px;
+	margin : 0px 50px;
+	font-family: 'allerregular';
+}
+
+.wrapper {
+	width:974px;
+	margin:0px auto;
+	background:/*#F9F9F9*/  #fff;
+	padding:  20px 25px 20px 25px;
+	min-height: 650px;
+}
+
+.deja_membre h2,
+.pas_membre h2 {
+	font-family: 'allerregular';
+	font-size:20px;
+	text-align: center;
+	margin-bottom:15px;
+}
+
+.deja_membre label,
+.pas_membre label {
+	width: 185px;
+	display: block;
+	float:left;
+}
+
+
+.pas_membre input[type="checkbox"] {
+	clear: both;
+}
+
+.deja_membre {
+	display : inline-block;
+	vertical-align : top;
+	width: 350px;
+	border : 2px solid #282828;
+	padding : 10px 15px;
+	height:200px;
+	float: left;
+	position: relative;
+}
+
+.pas_membre {
+	display : inline-block;
+	vertical-align : top;
+	width: 350px;
+	border : 2px solid #282828;
+	padding : 10px 15px;
+	height:200px;
+	float: right;
+	position: relative;
+}
+
+.pas_membre input[type="text"], .pas_membre input[type="email"],
+.deja_membre input[type="text"], .deja_membre input[type="email"] {
+	margin-bottom:10px;
+}
+
+
+
+.pas_membre .bouton-bleu,
+.deja_membre .bouton-bleu {
+	position: absolute;
+	bottom: 15px;
+	right: 150px;
+	padding: 4px 5px;
+}
+
+/*ETAPE 2 DU TUNNEL */
+
+.info_livraison {
+	border : 2px solid #282828;
+	padding : 10px 15px;
+	font-family: "quattrocento_sansregular";
+}
+
+.info_livraison h2 {
+	font-size: 25px;
+	margin : 0px 0px 20px 0px;
+}
+
+.info_livraison input[type="text"],
+.info_livraison input[type="email"],
+.info_livraison input[type="radio"] {
+	margin-bottom:10px;	
+}
+
+.info_livraison label {
+	float: left;
+	width: 200px;
+}
+
+.info_livraison label[for="monsieur"],
+.info_livraison label[for="madame"] {
+	float: none;
+}
+
+.info_livraison  p.gras {
+	font-size: 20px;
+	font-family: "quattrocento_sansregular";
+	margin : 0px 0px 20px 0px;
+}
+
+
+
+
+
+
+
+

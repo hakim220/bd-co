@@ -29,6 +29,7 @@ $email = $_SESSION['email'];
 					
 					//var_dump($info_membre);					
 ?>					
+					<img src="<?php echo $info_membre['avatar_img']; ?>" alt="avatar"  class="avatar"/>
 					<form method="post" action="">
 						<label>Pseudo</label><input type="text"  id="pseudo" disabled value="<?php echo $info_membre['pseudo']; ?>" /> <br/>
 						<label>Civilité</label><input type="text"  id="pseudo" disabled value="<?php echo $info_membre['civilite']; ?>" /> <br/>
@@ -87,6 +88,6 @@ $email = $_SESSION['email'];
 					}
 ?>
 </div> <!--fin post forum-->
-<a href="index.php?menu=deconnexion" class="bouton-rouge">Déconnexion</a>
+
 </div> <!--fin membre_content -->
 <?php include "footer.php";   ?>
