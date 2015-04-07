@@ -29,7 +29,7 @@ include "connexion.php";
 		<ul>
 			<li class="autre_etape">1) Identification</li>
 			<li class="etape_en_cours">2) Information et livraison</li>
-			<li class="autre_etape">3) Paiement</li>
+			<li class="autre_etape">3) Récapitulatif et paiement</li>
 		</ul>
 	</div> <!-- fin etape -->
 

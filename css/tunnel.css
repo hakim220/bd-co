@@ -32,6 +32,9 @@
 
 /*fin  du header du tunnel de vente*/
 
+
+
+/* styles des 3 étapes */
 .etape_en_cours {
 	font-weight: bold;
 }
@@ -46,10 +49,12 @@
 
 .etape ul li {
 	float: left;
-	font-size:27px;
+	font-size:21px;
 	margin : 0px 50px;
 	font-family: 'allerregular';
 }
+
+/* fin des styles des 3 étapes */
 
 .wrapper {
 	width:974px;
@@ -58,6 +63,9 @@
 	padding:  20px 25px 20px 25px;
 	min-height: 650px;
 }
+
+
+/* Etape 1 du tunnel */
 
 .deja_membre h2,
 .pas_membre h2 {
@@ -73,7 +81,6 @@
 	display: block;
 	float:left;
 }
-
 
 .pas_membre input[type="checkbox"] {
 	clear: both;
@@ -102,11 +109,10 @@
 }
 
 .pas_membre input[type="text"], .pas_membre input[type="email"],
-.deja_membre input[type="text"], .deja_membre input[type="email"] {
+.deja_membre input[type="text"], .deja_membre input[type="email"],
+.deja_membre input[type="password"], .pas_membre input[type="password"] {
 	margin-bottom:10px;
 }
-
-
 
 .pas_membre .bouton-bleu,
 .deja_membre .bouton-bleu {
@@ -116,7 +122,9 @@
 	padding: 4px 5px;
 }
 
-/*ETAPE 2 DU TUNNEL */
+/* fin de l'Etape 1 du tunnel */
+
+/*ETAPE 2 DU TUNNEL  (a et b) */
 
 .info_livraison {
 	border : 2px solid #282828;
@@ -153,8 +161,76 @@
 
 
 
+/*ETAPE 3 DU TUNNEL  */
 
+.content_tunnel3 {
+	margin: 0px auto;
+}
 
+.tableau_paiement {
+	 font-family: 'quattrocento_sansregular';
+	 margin: 0px auto;
+	 margin-bottom: 20px;
+}
 
+.tableau_paiement th {
+	padding : 0px 5px;
+	border : 2px solid #282828;
+}
 
+.tableau_paiement,
+.tableau_paiement tr,
+.tableau_paiement  td,
+.tableau_paiement thead tr th {
+	border : 2px solid #282828;
+}
 
+.produit_recap {
+	width:460px;
+	position: relative;
+}
+
+.produit_recap p {
+	left: 160px;
+    position: absolute;
+    top: 68px;
+  }
+
+.produit_recap img {
+	padding : 15px;
+}
+
+.tableau_paiement  td {
+	position: relative;
+}
+
+.tableau_paiement tbody tr td:first-child + td p ,
+.tableau_paiement tbody tr td:first-child + td + td p{
+	left: 26px;
+    position: absolute;
+    top: 68px;
+}
+
+.tableau_paiement tfoot tr,
+.tableau_paiement tfoot td {
+	border: none;
+}
+
+.tableau_paiement tfoot {
+	background: #282828;
+	color: #fff;
+	padding: 10px 0px;
+}
+
+.tableau_paiement tfoot tr td:first-child {
+	padding: 15px 0 15px 15px;
+}
+
+.tableau_paiement tfoot tr td:last-child {
+	padding-right: 18px;
+    text-align: right;
+}
+
+.tableau_paiement + p a {
+	padding: 2px 3px;
+}

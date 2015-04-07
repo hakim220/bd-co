@@ -28,7 +28,7 @@ include "connexion.php";
 		<ul>
 			<li class="etape_en_cours">1) Identification</li>
 			<li class="autre_etape">2) Information et livraison</li>
-			<li class="autre_etape">3) Paiement</li>
+			<li class="autre_etape">3) Récapitulatif et paiement</li>
 		</ul>
 	</div> <!-- fin etape -->
 <?php
@@ -42,7 +42,7 @@ if(!empty($_SESSION['panier']) && $_SESSION['total'] > 0) {
 		<h2>Je suis deja membre</h2>
 		<form method="post" action="">
 			<label for="email">E-mail</label><input id="email" type="email" name="email"/><br/>
-			<label for="password">Mot de passe</label><input id="password" type="text" name="password"/><br/>
+			<label for="password">Mot de passe</label><input id="password" type="password" name="password"/><br/>
 			<p class="text_center"><a href="#"><span class="underline">Mot de passe oublié</span></a></p> <br/>
 			<input type="submit" name="bouton-tunnel" class="bouton-bleu"/>
 		</form>
@@ -95,8 +95,8 @@ if(!empty($_SESSION['panier']) && $_SESSION['total'] > 0) {
 		<h2>Je ne suis pas encore membre</h2>
 		<form method="post" action="">
 			<label for="email2">E-mail</label><input id="email2" type="email" name="email_new_user"/><br/>
-			<label for="password2">Mot de passe</label><input id="password2" type="text" name="password"/><br/>
-			<label for="repeat_password">Repetez votre mot de passe</label><input id="repeat_password" type="text" name="repeat-password"/><br/>
+			<label for="password2">Mot de passe</label><input id="password2" type="password" name="password"/><br/>
+			<label for="repeat_password">Repetez votre mot de passe</label><input id="repeat_password" type="password" name="repeat-password"/><br/>
 			<p class="text_center"><input type="checkbox" name="condition_utilisation"/><a href="#">J'ai lu et accepeté <span class="underline">les contitions d'utilisation</span></a></p> <br/>
 			<input type="submit" name="bouton-tunnel-new-user" class="bouton-bleu"/>
 		</form>

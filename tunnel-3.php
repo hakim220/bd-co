@@ -2,7 +2,6 @@
 // Initialisations des sessions
 include "session.php";
 
-
 // Chargement des fonctions utiles
 include "initialisations.php";
 
@@ -19,7 +18,6 @@ include "connexion.php";
 	  <title>Bd-co.com</title>
 	  <link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/tunnel.css">
-	
 </head>
 	
 <body>
@@ -29,13 +27,21 @@ include "connexion.php";
 		<ul>
 			<li class="autre_etape">1) Identification</li>
 			<li class="autre_etape">2) Information et livraison</li>
-			<li class="etape_en_cours">3) Paiement</li>
+			<li class="etape_en_cours">3) Récapitulatif et paiement</li>
 		</ul>
 	</div> <!-- fin etape -->
-	<div class="info_livraison">
+	
+	<div class="content_tunnel3">
+		<table class="tableau_paiement">
+			<thead>
+				<tr>
+					<th>Article(s)</th>
+					<th>Prix Unitaire</th>
+					<th>Quantite</th>
+				</tr>
+			</thead>
+			<tbody>
 <?php
-
-echo $_SESSION['total'];
 
 $ids = array_keys($_SESSION['panier']);
 
@@ -46,15 +52,30 @@ $connexion_bdd = cree_connexion();
        
     $requete_produits_ajoutes = requete($connexion_bdd, $sql);
     $produits_ajoutes= retourne_tableau($requete_produits_ajoutes);
-	var_dump($produits_ajoutes);
+	
+	//var_dump($produits_ajoutes);
 
 	foreach ($produits_ajoutes as $produit) {
-		//echo "<img src='$produit['lien_photo']'/>";
-		echo $produit["designation"];
-		// affichage de la quantité pour un produit précis !
-		echo $_SESSION["panier"][$produit["fk_article"]];
-		echo "<br/>";
+	?>	
+	<tr>
+		<td class="produit_recap"> <img src="<?php echo  $produit['lien_photo'] ?>" alt="photo bd" width="90" height="120"/> <p><?php echo $produit["designation"]; ?> </p></td>
+		<td><p><?php echo  $produit['prix_unitaire'] ?> € </p></td>
+		<!--  affichage de la quantité pour un produit précis !  -->
+		<td> <p><?php echo $_SESSION["panier"][$produit["fk_article"]];  ?></p> </td>
+	</tr>
+	<?php
 	}
 ?>
-<p><a href="#" class="bouton-bleu">Passer au paiement Paypal</a></p>
-</div>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td class="gras">Total TTC</td>
+				<td></td>
+				<td class="gras"><?php echo $_SESSION['total']; ?> € </td>
+			</tr>
+		</tfoot>
+	</table>
+	<p class="text_center"><a href="#" class="bouton-bleu">Passer au paiement Paypal</a></p>
+</div> <!-- fin info_livraison -->
+
+<?php include("footer.php") ?>

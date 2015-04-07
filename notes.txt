@@ -48,6 +48,8 @@ home page dynamique
 date dans le forum à regler
 sécurité des inputs du forum
 gerer si le porduit est en stock ou pas... (stock => 0)
+mettre un timestamp dans la BDD forum pour avoir l'heure...
+gerer les MD5 pour le tunnel de vente
 
 ----
 

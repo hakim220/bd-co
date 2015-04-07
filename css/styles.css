@@ -917,14 +917,14 @@ div.post-forum.block-border a + br + span + br + span + span {
 .content_panier table,
 .content_panier table th
 .content_panier table tr,
-.content_panier table  td{
+.content_panier table  td,
+.content_panier table thead tr th{
 	border : 2px solid #282828;
 }
 
 .content_panier table {
 	width: 974px;
 }
-
 
 #page_panier .recap_livraison {
 	border : 2px solid #282828;
@@ -938,7 +938,7 @@ div.post-forum.block-border a + br + span + br + span + span {
 	padding : 5px 10px;
 }
 
-#page_panier div.clear  p {
+#page_panier div.clear + p {
 	float: left;
 }
 
@@ -946,3 +946,33 @@ div.post-forum.block-border a + br + span + br + span + span {
 	float: right;
 }
 
+/*====================================
+		RESULTAT DE LA RECHERCHE
+=====================================*/
+
+#content_mdr h1 {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+#content_mdr article {
+	  display: inline-block;
+    margin-bottom: 20px;
+    text-align: center;
+    vertical-align: top;
+    width: 220px;
+}
+
+#content_mdr article img + h2 {
+	font-size: 18px;
+	font-family: 'allerregular';
+}
+
+#content_mdr article img + h2 + p {
+	margin: 5px 0px;
+	font-family: 'quattrocento_sansregular';
+}
+
+#content_mdr article img + h2 + p + a {
+	padding: 2px 3px;
+}
