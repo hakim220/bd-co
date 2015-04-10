@@ -106,7 +106,15 @@ echo "</div>";
 		<div class="post-forum block-border">
 			<a href="index.php?sujet_forum=<?php echo $un_sujet['id_forum_sujet']; ?>" class="couleur-bleu"><span><?php echo $un_sujet['sujet']; ?></span></a> <br/>
 			<span>Par <?php echo $un_sujet['pseudo']; ?></span> <br/> 
-			<span>Le <?php echo $un_sujet['date_publication']; ?></span> 
+			<?php 	
+				// gestion de l'affichage de la date au format FR
+				$timestamp = strtotime($un_sujet['date_publication']); 
+				$dateFr = date("d/m/Y",$timestamp) ;
+			?>
+			
+			<span>Le <?php echo $dateFr ;  ?></span> 
+			
+			
 			<span><?php echo $nombre_message[$i]['COUNT(*)']." messages postés"; ?></span>
 			</div>
 	<?php

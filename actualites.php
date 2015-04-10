@@ -93,13 +93,7 @@ else {
 	//var_dump($toutes_actualites);
   //var_dump($tous_evenements);
    
-   
-   
-   
-   
-   
-   
-   
+
    
    foreach($actualites as $actualite){
 	?>
@@ -110,7 +104,15 @@ else {
 			<div class="content_actualite">
 				<h2><?php echo $actualite['titre'] ;?></h2>
 				<span> <?php echo "<a href='index.php?redacteur={$actualite['id_redacteur_actualite']}&amp;langue={$langue}'>" ?><?php echo 'par '. $actualite['nom'] .' '. $actualite['prenom'] ; ?></a></span>
-				<span>le <?php echo $actualite['date_publication'] ;  ?></span>
+				
+				<?php 
+						// affichage de la date au format FR
+					  $timestamp = strtotime($actualite['date_publication']); 
+					  $dateFr = date("d/m/Y",$timestamp) ;
+				?>
+				<span>le <?php echo $dateFr ;  ?></span>
+				
+				
 				<span class="couleur-rouge"><?php echo $actualite['categorie_actualite'] ;  ?></span>
 				<p><?php echo substr($actualite['texte'],0,200).'...' ;  ?></p>
 				<?php echo "<a class=\"lire_suite bouton-rouge\"  href='index.php?actualite={$actualite['id_actualite_seule']}&amp;langue={$langue}' >Lire la suite</a>"; ?>

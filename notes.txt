@@ -11,7 +11,7 @@
 =================*/
 	la gestion du css => pas tout dans un fichier
 	le multilingue pour ce qui a �t� fait
-	la date qui apparait au mauvais format
+	la date qui apparait au mauvais format => ok
 	faire des class CSS pour alleger le code  => ok
 	voir pour l'accessibilité du slider  =>  ok
 
@@ -45,10 +45,10 @@ Gerer la date dynamiquement
 remplir la bdd avec 20 BD => 8 bd à ajouter et tous les liens à faire
 Faire un premier clean general
 home page dynamique
-date dans le forum à regler
+date dans le forum à regler => ok
 sécurité des inputs du forum
 gerer si le porduit est en stock ou pas... (stock => 0)
-mettre un timestamp dans la BDD forum pour avoir l'heure...
+mettre un timestamp dans la BDD forum pour avoir l'heure => ok
 gerer les MD5 pour le tunnel de vente
 
 ----

@@ -39,7 +39,17 @@
 				<p><?php echo $un_message['pseudo_membre']; ?></p>
 			</div>
 			<p><?php echo $un_message['message']; ?></p>
-			<p>Le <?php echo $un_message['date_post']; ?></p>
+			
+			<?php 	
+				// gestion de la date avec heure et minute au format FR
+				$timestamp = strtotime($un_message['date_post']); 
+				$dateFr = date("d/m/Y à H:i ",$timestamp) ;
+			?>
+		
+		
+			<p>Le <?php echo $dateFr ; ?></p>
+		
+		
 		</div>
 	<?php
 	}
@@ -62,8 +72,11 @@
 			$reponse = $_POST['reponse'];
 			$sujet = $_GET['sujet_forum'];
 					
-				
-			$sql3 = "INSERT INTO forum_message VALUES('','$sujet','$_SESSION[membre]','$_SESSION[pseudo]',\"$reponse\",'2015-03-08')";
+			//Gestion de la date pour l'insertion en BDD lors du post d'un nouveau message
+			$now = time('now') ;
+			$dateFr = date("Y-m-d H:i:s",$now) ;
+			
+			$sql3 = "INSERT INTO forum_message VALUES('','$sujet','$_SESSION[membre]','$_SESSION[pseudo]',\"$reponse\",'$dateFr')";
 			requete($connexion_bdd, $sql3);
 			}	
 			else {

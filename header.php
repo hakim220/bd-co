@@ -7,7 +7,10 @@
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="js/socialcount/socialcount.css">
 	
-	
+	<!-- fichier pour la gestion du full calendar -->
+	<link rel='stylesheet' href='js/full_calendar/fullcalendar.min.css' />
+
+
 	
 	
 	  <?php

@@ -149,11 +149,11 @@ rouge : #D12323;
 
 .block-border {
 	/*background-repeat: repeat-y; background-image: url("../img-maquette/oblique-lines3.png");*/
-	-moz-box-shadow: 3px 3px 3px 0px #B2B2B2;
+	/*-moz-box-shadow: 3px 3px 3px 0px #B2B2B2;
 	-webkit-box-shadow: 3px 3px 3px 0px #B2B2B2;
 	-o-box-shadow: 3px 3px 3px 0px #B2B2B2;
 	box-shadow: 3px 3px 3px 0px #B2B2B2;
-	filter:progid:DXImageTransform.Microsoft.Shadow(color=#B2B2B2, Direction=135, Strength=3);
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#B2B2B2, Direction=135, Strength=3);*/
 	border-radius: 0 0.25rem;
     border-style: solid;
     border-width: 1px 0.25rem 0.25rem 1px;

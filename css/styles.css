@@ -399,6 +399,17 @@ font-family:'allerlight';
 /*===========================
 	PAGE EVENEMENTS
 ==========================*/
+
+/*Full calendar*/
+	
+.fc-left h2 {
+	 text-transform: capitalize;
+}
+
+.fc-title:hover {
+	cursor: pointer;
+}
+
 .un_evenement {
 	font-family: 'quattrocento_sansregular';
     height: 30px;

@@ -36,11 +36,32 @@
 	  <script src="js/socialcount/socialcount.js"></script>
 	 
 	 
+	 <!-- fichier pour la gestion du full Calendar -->
+	 <script src='js/full_calendar/moment.min.js'></script>
+	 <script src='js/full_calendar/fullcalendar.min.js'></script>
+	 <script src='js/full_calendar/lang-all.js'></script>
+
+	 
+	 
+	 
 	  <script>
 	  $(document).ready(function(){
 			
 			// appel à BX slider
 			$('.bxslider').bxSlider();
+			
+			
+			 // Appel de fullCalendar
+
+		    $('#calendar').fullCalendar({
+		        // put your options and callbacks here
+		      	editable : false,
+		      	lang: '<?php  echo "fr"?>',
+		        events : "js/full_calendar/events.php"
+		        
+		    });
+			
+			
 	  });
 	  </script>
 	</body>
