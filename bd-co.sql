@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Lun 06 Avril 2015 à 22:38
+-- Généré le: Dim 12 Avril 2015 à 23:10
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -38,6 +38,7 @@ CREATE TABLE IF NOT EXISTS `actualite_seule` (
   `date_publication` date NOT NULL,
   `photo_miniature` varchar(100) NOT NULL,
   `categorie_actualite` enum('news','interview','chronique') NOT NULL,
+  `langue` enum('fr','en') NOT NULL,
   PRIMARY KEY (`id_actualite_seule`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
@@ -45,11 +46,11 @@ CREATE TABLE IF NOT EXISTS `actualite_seule` (
 -- Contenu de la table `actualite_seule`
 --
 
-INSERT INTO `actualite_seule` (`id_actualite_seule`, `fk_redacteur_article`, `titre`, `photo`, `alt_photo`, `legende_photo`, `texte`, `date_publication`, `photo_miniature`, `categorie_actualite`) VALUES
-(1, 1, 'News numero 1', 'images-photos/article1.jpg', '', 'cece est la legende de la photo', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2015-03-15', 'images-photos/article1.jpg', 'news'),
-(2, 1, 'Interview numero 1 ', 'images-photos/article2.png', '', 'ceci est la legende de la photo', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2015-03-19', 'images-photos/article2.png', 'interview'),
-(3, 2, 'Chronique numero 1', 'images-photos/article3.jpg', '', 'ceci est la legende de la photo', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2015-03-30', 'images-photos/article3.jpg', 'chronique'),
-(4, 2, 'Chronique numero 2', 'images-photos/article4.jpg', 'xxx', 'ceci est la legende de la photo', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2015-03-23', 'images-photos/article4.jpg', 'chronique');
+INSERT INTO `actualite_seule` (`id_actualite_seule`, `fk_redacteur_article`, `titre`, `photo`, `alt_photo`, `legende_photo`, `texte`, `date_publication`, `photo_miniature`, `categorie_actualite`, `langue`) VALUES
+(1, 1, 'News numero 1', 'images-photos/article1.jpg', '', 'cece est la legende de la photo', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2015-03-15', 'images-photos/article1.jpg', 'news', 'fr'),
+(2, 1, 'Interview numero 1 ', 'images-photos/article2.png', '', 'ceci est la legende de la photo', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2015-03-19', 'images-photos/article2.png', 'interview', 'fr'),
+(3, 2, 'Chronique numero 1', 'images-photos/article3.jpg', '', 'ceci est la legende de la photo', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2015-03-30', 'images-photos/article3.jpg', 'chronique', 'fr'),
+(4, 2, 'Chronique numero 2', 'images-photos/article4.jpg', 'xxx', 'ceci est la legende de la photo', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2015-03-23', 'images-photos/article4.jpg', 'chronique', 'fr');
 
 -- --------------------------------------------------------
 
@@ -181,24 +182,25 @@ DROP TABLE IF EXISTS `evenements`;
 CREATE TABLE IF NOT EXISTS `evenements` (
   `id_evenement` int(11) NOT NULL AUTO_INCREMENT,
   `date` date NOT NULL,
-  `titre` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
   `image` varchar(100) NOT NULL,
   `alt_image` varchar(255) NOT NULL,
   `texte` text NOT NULL,
   `echeance` enum('a venir','a eu lieu') NOT NULL,
   `langue` enum('fr','en') NOT NULL,
   PRIMARY KEY (`id_evenement`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Contenu de la table `evenements`
 --
 
-INSERT INTO `evenements` (`id_evenement`, `date`, `titre`, `image`, `alt_image`, `texte`, `echeance`, `langue`) VALUES
+INSERT INTO `evenements` (`id_evenement`, `date`, `title`, `image`, `alt_image`, `texte`, `echeance`, `langue`) VALUES
 (1, '2015-03-10', 'Salon de la bande dessinée', 'images-photos/salon-bd.jpg', 'image salon bd', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l''imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n''a pas fait que survivre cinq siècles, mais s''est aussi adapté à la bureautique informatique, sans que son contenu n''en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.', 'a venir', 'fr'),
 (2, '2015-03-10', 'Bd ''s Salon', 'images-photos/salon-bd.jpg', 'image salon bd', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l''imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n''a pas fait que survivre cinq siècles, mais s''est aussi adapté à la bureautique informatique, sans que son contenu n''en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.', 'a venir', 'en'),
 (3, '2015-03-12', 'Lancement d''une collection', 'images-photos/collection-bd.jpg', 'image collection bd', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l''imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n''a pas fait que survivre cinq siècles, mais s''est aussi adapté à la bureautique informatique, sans que son contenu n''en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.', 'a eu lieu', 'fr'),
-(4, '2015-03-12', 'Collections is coming', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant imp', 'image collection bd', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l''imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n''a pas fait que survivre cinq siècles, mais s''est aussi adapté à la bureautique informatique, sans que son contenu n''en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.', 'a eu lieu', 'en');
+(4, '2015-03-12', 'Collections is coming', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant imp', 'image collection bd', 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l''imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n''a pas fait que survivre cinq siècles, mais s''est aussi adapté à la bureautique informatique, sans que son contenu n''en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.', 'a eu lieu', 'en'),
+(5, '2015-04-12', 'Un nouvel evenement qui va se tenir à paris', '', 'xx', 'sjkddkfdf,skf', 'a venir', 'fr');
 
 -- --------------------------------------------------------
 
@@ -213,51 +215,53 @@ CREATE TABLE IF NOT EXISTS `forum_message` (
   `fk_membre` int(11) NOT NULL,
   `pseudo_membre` varchar(255) NOT NULL,
   `message` text,
-  `date_post` date DEFAULT NULL,
+  `date_post` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id_forum_message`),
   KEY `message-sujet_idx` (`fk_sujet`),
   KEY `message-membre_idx` (`fk_membre`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=47 ;
 
 --
 -- Contenu de la table `forum_message`
 --
 
 INSERT INTO `forum_message` (`id_forum_message`, `fk_sujet`, `fk_membre`, `pseudo_membre`, `message`, `date_post`) VALUES
-(1, 1, 5, 'test', 'Bonjour à tous, je me demandais où est-ce que je pourrais trouver le BD xxxxx', '2015-03-18'),
-(2, 1, 5, 'test', 'je fais un test', '2015-03-08'),
-(3, 2, 5, 'test', 'blablablalblalzlfdkofokdfkodkofkodfdokfokd', '2015-03-08'),
-(4, 3, 5, 'test', 'je tente de poster un 3eme sujet', '2015-03-08'),
-(5, 2, 5, 'test', 'je fais une reponse pour voir si tout marche', '2015-03-08'),
-(6, 5, 5, 'test', 'voici un message aléatoire', '2015-03-08'),
-(7, 4, 5, 'test', 'nbfkfkogkodfokgfkopgkofog\r\n(rajouté via php admin)', '2015-03-27'),
-(8, 4, 5, 'test', 'nbfkfkogkodfokgfkopgkofog\r\n(rajouté via php admin)', '2015-03-27'),
-(9, 6, 5, 'test', 'ffffffffdddf', '2015-03-08'),
-(10, 7, 5, 'test', 'dsfsdfsdf', '2015-03-08'),
-(11, 6, 5, 'test', 'ça y est ', '2015-03-08'),
-(12, 7, 5, 'test', 'test de bug', '2015-03-08'),
-(13, 8, 6, 'Monsieur P', 'voici un test hifbsdifsdiofhudf', '2015-03-08'),
-(14, 8, 6, 'Monsieur P', 'jgsdopigsjopdfg,kskopdfplsdfsdfsdf', '2015-03-08'),
-(15, 8, 5, 'test', 'ifjidij^shzôhehi^zenfsgf', '2015-03-08'),
-(16, 8, 5, 'test', 'cest test', '2015-03-08'),
-(17, 8, 5, '5', 'est-ce que ça va marcher', '2015-03-08'),
-(18, 8, 5, 'test', 'ça doit marcher', '2015-03-08'),
-(19, 8, 6, 'Monsieur P', 'nouvelle verif si ça marche', '2015-03-08'),
-(20, 8, 7, 'user22', 'je suis un nouvel utilisateur', '2015-03-08'),
-(21, 12, 7, 'user22', 'fdfdfdgfgfger', '2015-03-08'),
-(22, 11, 7, 'user22', 'dfdfdfdf', '2015-03-08'),
-(23, 12, 7, 'user22', 'dfdfgfgf', '2015-03-08'),
-(24, 12, 7, 'user22', 'zrzrtfrgrr', '2015-03-08'),
-(25, 10, 7, 'user22', 'je repare', '2015-03-12'),
-(26, 9, 7, 'user22', 'je repare part 2', '2015-03-11'),
-(27, 13, 7, 'user22', 'j''avais un probleme de cote, je teste si ça marche 214', '2015-03-08'),
-(28, 13, 7, 'user22', 'j''avais ce probleme, je ne l''ai plus...', '2015-03-08'),
-(29, 8, 7, 'user22', 'je  suis user 22', '2015-03-08'),
-(30, 8, 7, 'user22', 'kjkkhjihiok', '2015-03-08'),
-(31, 9, 7, 'user22', 'je teste si ça marche', '2015-03-08'),
-(35, 14, 7, 'user22', 'je fais un test avec les catégories', '2015-03-08'),
-(36, 15, 7, 'user22', 'je t''este l''a catégorie actualités 2145', '2015-03-08'),
-(37, 16, 7, 'user22', 'jdfkodnos', '2015-03-08');
+(1, 1, 5, 'test', 'Bonjour à tous, je me demandais où est-ce que je pourrais trouver le BD xxxxx', '2015-03-17 23:00:00'),
+(2, 1, 5, 'test', 'je fais un test', '2015-03-07 23:00:00'),
+(3, 2, 5, 'test', 'blablablalblalzlfdkofokdfkodkofkodfdokfokd', '2015-03-07 23:00:00'),
+(4, 3, 5, 'test', 'je tente de poster un 3eme sujet', '2015-03-07 23:00:00'),
+(5, 2, 5, 'test', 'je fais une reponse pour voir si tout marche', '2015-03-07 23:00:00'),
+(6, 5, 5, 'test', 'voici un message aléatoire', '2015-03-07 23:00:00'),
+(7, 4, 5, 'test', 'nbfkfkogkodfokgfkopgkofog\r\n(rajouté via php admin)', '2015-03-26 23:00:00'),
+(8, 4, 5, 'test', 'nbfkfkogkodfokgfkopgkofog\r\n(rajouté via php admin)', '2015-03-26 23:00:00'),
+(9, 6, 5, 'test', 'ffffffffdddf', '2015-03-07 23:00:00'),
+(10, 7, 5, 'test', 'dsfsdfsdf', '2015-03-07 23:00:00'),
+(11, 6, 5, 'test', 'ça y est ', '2015-03-07 23:00:00'),
+(12, 7, 5, 'test', 'test de bug', '2015-03-07 23:00:00'),
+(13, 8, 6, 'Monsieur P', 'voici un test hifbsdifsdiofhudf', '2015-03-07 23:00:00'),
+(14, 8, 6, 'Monsieur P', 'jgsdopigsjopdfg,kskopdfplsdfsdfsdf', '2015-03-07 23:00:00'),
+(15, 8, 5, 'test', 'ifjidij^shzôhehi^zenfsgf', '2015-03-07 23:00:00'),
+(16, 8, 5, 'test', 'cest test', '2015-03-07 23:00:00'),
+(17, 8, 5, '5', 'est-ce que ça va marcher', '2015-03-07 23:00:00'),
+(18, 8, 5, 'test', 'ça doit marcher', '2015-03-07 23:00:00'),
+(19, 8, 6, 'Monsieur P', 'nouvelle verif si ça marche', '2015-03-07 23:00:00'),
+(20, 8, 7, 'user22', 'je suis un nouvel utilisateur', '2015-03-07 23:00:00'),
+(21, 12, 7, 'user22', 'fdfdfdgfgfger', '2015-03-07 23:00:00'),
+(22, 11, 7, 'user22', 'dfdfdfdf', '2015-03-07 23:00:00'),
+(23, 12, 7, 'user22', 'dfdfgfgf', '2015-03-07 23:00:00'),
+(24, 12, 7, 'user22', 'zrzrtfrgrr', '2015-03-07 23:00:00'),
+(25, 10, 7, 'user22', 'je repare', '2015-03-11 23:00:00'),
+(26, 9, 7, 'user22', 'je repare part 2', '2015-03-10 23:00:00'),
+(27, 13, 7, 'user22', 'j''avais un probleme de cote, je teste si ça marche 214', '2015-03-07 23:00:00'),
+(28, 13, 7, 'user22', 'j''avais ce probleme, je ne l''ai plus...', '2015-03-07 23:00:00'),
+(29, 8, 7, 'user22', 'je  suis user 22', '2015-03-07 23:00:00'),
+(30, 8, 7, 'user22', 'kjkkhjihiok', '2015-03-07 23:00:00'),
+(31, 9, 7, 'user22', 'je teste si ça marche', '2015-03-07 23:00:00'),
+(35, 14, 7, 'user22', 'je fais un test avec les catégories', '2015-03-07 23:00:00'),
+(36, 15, 7, 'user22', 'je t''este l''a catégorie actualités 2145', '2015-03-07 23:00:00'),
+(37, 16, 7, 'user22', 'jdfkodnos', '2015-03-07 23:00:00'),
+(45, 1, 5, 'testotuo', 'dfdfdfzzzzzzzzzzzzzzzzzzzzz', '2015-04-08 20:29:58'),
+(46, 3, 5, 'testotuo', 'fgfgfggffgfggffg', '2015-04-08 20:46:26');
 
 -- --------------------------------------------------------
 
